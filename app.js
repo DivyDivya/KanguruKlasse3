@@ -530,7 +530,9 @@ function renderQuestion() {
   });
 
   // Reset submit button
-  document.getElementById('submit-answer-btn').disabled = true;
+  const submitBtn = document.getElementById('submit-answer-btn');
+  submitBtn.disabled = true;
+  submitBtn.style.display = ''; // Reset display style to show button
 
   // Hide feedback card
   document.getElementById('feedback-card').classList.add('hidden');
