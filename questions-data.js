@@ -199,60 +199,114 @@ const questionBank = [
     difficulty: 'easy',
     points: 3,
     topic: 'geometry',
-    question: 'How many sides does a triangle have?',
-    options: ['2', '3', '4', '5', '6'],
+    question: {
+      de: 'Wie viele Seiten hat ein Dreieck?',
+      en: 'How many sides does a triangle have?'
+    },
+    options: {
+      de: ['2', '3', '4', '5', '6'],
+      en: ['2', '3', '4', '5', '6']
+    },
     correctAnswer: 1,
-    explanation: 'A triangle always has exactly 3 sides and 3 corners. The word "tri" means three!'
+    explanation: {
+      de: 'Ein Dreieck hat immer genau 3 Seiten und 3 Ecken. Das Wort "Drei" bedeutet drei!',
+      en: 'A triangle always has exactly 3 sides and 3 corners. The word "tri" means three!'
+    }
   },
   {
     id: 6,
     difficulty: 'easy',
     points: 3,
     topic: 'logic',
-    question: 'If you have 5 apples and eat 2, how many apples do you have left?',
-    options: ['2', '3', '4', '5', '7'],
+    question: {
+      de: 'Wenn du 5 Äpfel hast und 2 isst, wie viele Äpfel hast du noch übrig?',
+      en: 'If you have 5 apples and eat 2, how many apples do you have left?'
+    },
+    options: {
+      de: ['2', '3', '4', '5', '7'],
+      en: ['2', '3', '4', '5', '7']
+    },
     correctAnswer: 1,
-    explanation: 'Start with 5 apples, eat (subtract) 2: 5 - 2 = 3 apples left. You still have 3 apples!'
+    explanation: {
+      de: 'Beginne mit 5 Äpfeln, iss (subtrahiere) 2: 5 - 2 = 3 Äpfel übrig. Du hast noch 3 Äpfel!',
+      en: 'Start with 5 apples, eat (subtract) 2: 5 - 2 = 3 apples left. You still have 3 apples!'
+    }
   },
   {
     id: 7,
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
-    question: 'What is 20 + 15?',
-    options: ['30', '32', '35', '40', '45'],
+    question: {
+      de: 'Was ist 20 + 15?',
+      en: 'What is 20 + 15?'
+    },
+    options: {
+      de: ['30', '32', '35', '40', '45'],
+      en: ['30', '32', '35', '40', '45']
+    },
     correctAnswer: 2,
-    explanation: 'To add 20 + 15, think: 20 + 10 = 30, then 30 + 5 = 35. Easy!'
+    explanation: {
+      de: 'Um 20 + 15 zu addieren, denke: 20 + 10 = 30, dann 30 + 5 = 35. Einfach!',
+      en: 'To add 20 + 15, think: 20 + 10 = 30, then 30 + 5 = 35. Easy!'
+    }
   },
   {
     id: 8,
     difficulty: 'easy',
     points: 3,
     topic: 'time',
-    question: 'How many minutes are in 1 hour?',
-    options: ['30', '45', '60', '90', '100'],
+    question: {
+      de: 'Wie viele Minuten sind in 1 Stunde?',
+      en: 'How many minutes are in 1 hour?'
+    },
+    options: {
+      de: ['30', '45', '60', '90', '100'],
+      en: ['30', '45', '60', '90', '100']
+    },
     correctAnswer: 2,
-    explanation: '1 hour = 60 minutes. Remember: 60 seconds in a minute, 60 minutes in an hour!'
+    explanation: {
+      de: '1 Stunde = 60 Minuten. Merke: 60 Sekunden in einer Minute, 60 Minuten in einer Stunde!',
+      en: '1 hour = 60 minutes. Remember: 60 seconds in a minute, 60 minutes in an hour!'
+    }
   },
   {
     id: 9,
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
-    question: 'What is 5 × 2?',
-    options: ['7', '8', '10', '12', '15'],
+    question: {
+      de: 'Was ist 5 × 2?',
+      en: 'What is 5 × 2?'
+    },
+    options: {
+      de: ['7', '8', '10', '12', '15'],
+      en: ['7', '8', '10', '12', '15']
+    },
     correctAnswer: 2,
-    explanation: '5 × 2 = 5 + 5 = 10. It means "2 groups of 5" or "5 groups of 2"!'
+    explanation: {
+      de: '5 × 2 = 5 + 5 = 10. Es bedeutet "2 Gruppen von 5" oder "5 Gruppen von 2"!',
+      en: '5 × 2 = 5 + 5 = 10. It means "2 groups of 5" or "5 groups of 2"!'
+    }
   },
   {
     id: 10,
     difficulty: 'easy',
     points: 3,
     topic: 'patterns',
-    question: 'What number comes next? 10, 20, 30, 40, ?',
-    options: ['45', '50', '55', '60', '70'],
+    question: {
+      de: 'Welche Zahl kommt als nächstes? 10, 20, 30, 40, ?',
+      en: 'What number comes next? 10, 20, 30, 40, ?'
+    },
+    options: {
+      de: ['45', '50', '55', '60', '70'],
+      en: ['45', '50', '55', '60', '70']
+    },
     correctAnswer: 1,
-    explanation: 'This pattern adds 10 each time: 10, 20 (+10), 30 (+10), 40 (+10), so next is 50!'
+    explanation: {
+      de: 'Dieses Muster addiert jedes Mal 10: 10, 20 (+10), 30 (+10), 40 (+10), also kommt als nächstes 50!',
+      en: 'This pattern adds 10 each time: 10, 20 (+10), 30 (+10), 40 (+10), so next is 50!'
+    }
   },
   {
     id: 11,
@@ -1042,89 +1096,170 @@ const questionBank = [
     difficulty: 'hard',
     points: 5,
     topic: 'geometry',
-    question: 'How many edges does a cube have?',
-    options: ['8', '10', '12', '14', '16'],
+    question: {
+      de: 'Wie viele Kanten hat ein Würfel?',
+      en: 'How many edges does a cube have?'
+    },
+    options: {
+      de: ['8', '10', '12', '14', '16'],
+      en: ['8', '10', '12', '14', '16']
+    },
     correctAnswer: 2,
-    explanation: 'A cube has 12 edges! Think of a dice: 4 edges on top, 4 on bottom, and 4 vertical edges connecting them. 4 + 4 + 4 = 12!'
+    explanation: {
+      de: 'Ein Würfel hat 12 Kanten! Denk an einen Spielwürfel: 4 Kanten oben, 4 unten und 4 vertikale Kanten, die sie verbinden. 4 + 4 + 4 = 12!',
+      en: 'A cube has 12 edges! Think of a dice: 4 edges on top, 4 on bottom, and 4 vertical edges connecting them. 4 + 4 + 4 = 12!'
+    }
   },
   {
     id: 53,
     difficulty: 'hard',
     points: 5,
     topic: 'logic',
-    question: 'A train leaves at 9:45 AM and arrives at 1:15 PM. How long is the journey?',
-    options: ['3 hours', '3 hours 15 min', '3 hours 30 min', '3 hours 45 min', '4 hours'],
+    question: {
+      de: 'Ein Zug fährt um 9:45 Uhr ab und kommt um 13:15 Uhr an. Wie lang ist die Fahrt?',
+      en: 'A train leaves at 9:45 AM and arrives at 1:15 PM. How long is the journey?'
+    },
+    options: {
+      de: ['3 Stunden', '3 Stunden 15 Min', '3 Stunden 30 Min', '3 Stunden 45 Min', '4 Stunden'],
+      en: ['3 hours', '3 hours 15 min', '3 hours 30 min', '3 hours 45 min', '4 hours']
+    },
     correctAnswer: 2,
-    explanation: 'From 9:45 to 10:45 is 1 hour. From 10:45 to 1:15 is 2 hours 30 min (10:45 to 12:45 is 2 hours, then 30 min more to 1:15). Total: 1 hour + 2 hours 30 min = 3 hours 30 minutes!'
+    explanation: {
+      de: 'Von 9:45 bis 10:45 ist 1 Stunde. Von 10:45 bis 13:15 sind 2 Stunden 30 Min (10:45 bis 12:45 sind 2 Stunden, dann noch 30 Min bis 13:15). Gesamt: 1 Stunde + 2 Stunden 30 Min = 3 Stunden 30 Minuten!',
+      en: 'From 9:45 to 10:45 is 1 hour. From 10:45 to 1:15 is 2 hours 30 min (10:45 to 12:45 is 2 hours, then 30 min more to 1:15). Total: 1 hour + 2 hours 30 min = 3 hours 30 minutes!'
+    }
   },
   {
     id: 54,
     difficulty: 'hard',
     points: 5,
     topic: 'arithmetic',
-    question: 'What is 250 - 87?',
-    options: ['153', '163', '173', '183', '193'],
+    question: {
+      de: 'Was ist 250 - 87?',
+      en: 'What is 250 - 87?'
+    },
+    options: {
+      de: ['153', '163', '173', '183', '193'],
+      en: ['153', '163', '173', '183', '193']
+    },
     correctAnswer: 1,
-    explanation: 'One way: 250 - 87 = 250 - 100 + 13 = 150 + 13 = 163. Or count up from 87: 87 + 13 = 100, 100 + 150 = 250, so 13 + 150 = 163!'
+    explanation: {
+      de: 'Ein Weg: 250 - 87 = 250 - 100 + 13 = 150 + 13 = 163. Oder zähle von 87 hoch: 87 + 13 = 100, 100 + 150 = 250, also 13 + 150 = 163!',
+      en: 'One way: 250 - 87 = 250 - 100 + 13 = 150 + 13 = 163. Or count up from 87: 87 + 13 = 100, 100 + 150 = 250, so 13 + 150 = 163!'
+    }
   },
   {
     id: 55,
     difficulty: 'hard',
     points: 5,
     topic: 'measurement',
-    question: 'A car travels 60 km in 1 hour. How far will it travel in 3 hours at the same speed?',
-    options: ['120 km', '150 km', '180 km', '200 km', '240 km'],
+    question: {
+      de: 'Ein Auto fährt 60 km in 1 Stunde. Wie weit fährt es in 3 Stunden mit der gleichen Geschwindigkeit?',
+      en: 'A car travels 60 km in 1 hour. How far will it travel in 3 hours at the same speed?'
+    },
+    options: {
+      de: ['120 km', '150 km', '180 km', '200 km', '240 km'],
+      en: ['120 km', '150 km', '180 km', '200 km', '240 km']
+    },
     correctAnswer: 2,
-    explanation: 'The car goes 60 km per hour. In 3 hours: 60 × 3 = 180 km!'
+    explanation: {
+      de: 'Das Auto fährt 60 km pro Stunde. In 3 Stunden: 60 × 3 = 180 km!',
+      en: 'The car goes 60 km per hour. In 3 hours: 60 × 3 = 180 km!'
+    }
   },
   {
     id: 56,
     difficulty: 'hard',
     points: 5,
     topic: 'logic',
-    question: 'You have $100. You buy 3 books at $12 each and 2 pens at $5 each. How much money do you have left?',
-    options: ['$44', '$48', '$52', '$54', '$58'],
+    question: {
+      de: 'Du hast 100 €. Du kaufst 3 Bücher zu je 12 € und 2 Stifte zu je 5 €. Wie viel Geld hast du noch übrig?',
+      en: 'You have $100. You buy 3 books at $12 each and 2 pens at $5 each. How much money do you have left?'
+    },
+    options: {
+      de: ['44 €', '48 €', '52 €', '54 €', '58 €'],
+      en: ['$44', '$48', '$52', '$54', '$58']
+    },
     correctAnswer: 3,
-    explanation: 'Books cost: 3 × $12 = $36. Pens cost: 2 × $5 = $10. Total spent: $36 + $10 = $46. Money left: $100 - $46 = $54!'
+    explanation: {
+      de: 'Bücher kosten: 3 × 12 € = 36 €. Stifte kosten: 2 × 5 € = 10 €. Gesamt ausgegeben: 36 € + 10 € = 46 €. Geld übrig: 100 € - 46 € = 54 €!',
+      en: 'Books cost: 3 × $12 = $36. Pens cost: 2 × $5 = $10. Total spent: $36 + $10 = $46. Money left: $100 - $46 = $54!'
+    }
   },
   {
     id: 57,
     difficulty: 'hard',
     points: 5,
     topic: 'patterns',
-    question: 'What is the missing number? 7 × ? = 84',
-    options: ['10', '11', '12', '13', '14'],
+    question: {
+      de: 'Was ist die fehlende Zahl? 7 × ? = 84',
+      en: 'What is the missing number? 7 × ? = 84'
+    },
+    options: {
+      de: ['10', '11', '12', '13', '14'],
+      en: ['10', '11', '12', '13', '14']
+    },
     correctAnswer: 2,
-    explanation: '7 × 12 = 84. Think: 7 × 10 = 70, and 7 × 2 = 14, so 70 + 14 = 84. Or divide: 84 ÷ 7 = 12!'
+    explanation: {
+      de: '7 × 12 = 84. Denke: 7 × 10 = 70, und 7 × 2 = 14, also 70 + 14 = 84. Oder teile: 84 ÷ 7 = 12!',
+      en: '7 × 12 = 84. Think: 7 × 10 = 70, and 7 × 2 = 14, so 70 + 14 = 84. Or divide: 84 ÷ 7 = 12!'
+    }
   },
   {
     id: 58,
     difficulty: 'hard',
     points: 5,
     topic: 'geometry',
-    question: 'A square garden has a perimeter of 32 meters. What is the length of one side?',
-    options: ['6 m', '7 m', '8 m', '9 m', '10 m'],
+    question: {
+      de: 'Ein quadratischer Garten hat einen Umfang von 32 Metern. Wie lang ist eine Seite?',
+      en: 'A square garden has a perimeter of 32 meters. What is the length of one side?'
+    },
+    options: {
+      de: ['6 m', '7 m', '8 m', '9 m', '10 m'],
+      en: ['6 m', '7 m', '8 m', '9 m', '10 m']
+    },
     correctAnswer: 2,
-    explanation: 'A square has 4 equal sides. Perimeter = 32 m, so each side = 32 ÷ 4 = 8 meters!'
+    explanation: {
+      de: 'Ein Quadrat hat 4 gleich lange Seiten. Umfang = 32 m, also jede Seite = 32 ÷ 4 = 8 Meter!',
+      en: 'A square has 4 equal sides. Perimeter = 32 m, so each side = 32 ÷ 4 = 8 meters!'
+    }
   },
   {
     id: 59,
     difficulty: 'hard',
     points: 5,
     topic: 'arithmetic',
-    question: 'What is half of 94?',
-    options: ['45', '46', '47', '48', '49'],
+    question: {
+      de: 'Was ist die Hälfte von 94?',
+      en: 'What is half of 94?'
+    },
+    options: {
+      de: ['45', '46', '47', '48', '49'],
+      en: ['45', '46', '47', '48', '49']
+    },
     correctAnswer: 2,
-    explanation: 'Half of 94 = 94 ÷ 2 = 47. Think: half of 90 is 45, and half of 4 is 2, so 45 + 2 = 47!'
+    explanation: {
+      de: 'Die Hälfte von 94 = 94 ÷ 2 = 47. Denke: Die Hälfte von 90 ist 45, und die Hälfte von 4 ist 2, also 45 + 2 = 47!',
+      en: 'Half of 94 = 94 ÷ 2 = 47. Think: half of 90 is 45, and half of 4 is 2, so 45 + 2 = 47!'
+    }
   },
   {
     id: 60,
     difficulty: 'hard',
     points: 5,
     topic: 'logic',
-    question: 'A box contains 5 red marbles, 8 blue marbles, and 7 green marbles. How many marbles are in the box?',
-    options: ['18', '19', '20', '21', '22'],
+    question: {
+      de: 'Eine Schachtel enthält 5 rote Murmeln, 8 blaue Murmeln und 7 grüne Murmeln. Wie viele Murmeln sind in der Schachtel?',
+      en: 'A box contains 5 red marbles, 8 blue marbles, and 7 green marbles. How many marbles are in the box?'
+    },
+    options: {
+      de: ['18', '19', '20', '21', '22'],
+      en: ['18', '19', '20', '21', '22']
+    },
     correctAnswer: 2,
-    explanation: 'Add all the marbles: 5 red + 8 blue + 7 green = 20 marbles total!'
+    explanation: {
+      de: 'Addiere alle Murmeln: 5 rote + 8 blaue + 7 grüne = 20 Murmeln insgesamt!',
+      en: 'Add all the marbles: 5 red + 8 blue + 7 green = 20 marbles total!'
+    }
   }
 ];
