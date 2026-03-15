@@ -203,124 +203,6 @@ const questionBank = [
     }
   },
   {
-    id: 5,
-    difficulty: 'easy',
-    points: 3,
-    topic: 'geometry',
-    question: {
-      de: 'Wie viele Seiten hat ein Dreieck?',
-      en: 'How many sides does a triangle have?'
-    },
-    options: {
-      de: ['2', '3', '4', '5', '6'],
-      en: ['2', '3', '4', '5', '6']
-    },
-    correctAnswer: 1,
-    explanation: {
-      de: 'Ein Dreieck hat immer genau 3 Seiten und 3 Ecken. Das Wort "Drei" bedeutet drei!',
-      en: 'A triangle always has exactly 3 sides and 3 corners. The word "tri" means three!'
-    }
-  },
-  {
-    id: 6,
-    templateId: 'word_problem_subtraction',
-    difficulty: 'easy',
-    points: 3,
-    topic: 'logic',
-    question: {
-      de: 'Wenn du 5 Äpfel hast und 2 isst, wie viele Äpfel hast du noch übrig?',
-      en: 'If you have 5 apples and eat 2, how many apples do you have left?'
-    },
-    options: {
-      de: ['2', '3', '4', '5', '7'],
-      en: ['2', '3', '4', '5', '7']
-    },
-    correctAnswer: 1,
-    explanation: {
-      de: 'Beginne mit 5 Äpfeln, iss (subtrahiere) 2: 5 - 2 = 3 Äpfel übrig. Du hast noch 3 Äpfel!',
-      en: 'Start with 5 apples, eat (subtract) 2: 5 - 2 = 3 apples left. You still have 3 apples!'
-    }
-  },
-  {
-    id: 7,
-    templateId: 'addition_basic',
-    difficulty: 'easy',
-    points: 3,
-    topic: 'arithmetic',
-    question: {
-      de: 'Was ist 20 + 15?',
-      en: 'What is 20 + 15?'
-    },
-    options: {
-      de: ['30', '32', '35', '40', '45'],
-      en: ['30', '32', '35', '40', '45']
-    },
-    correctAnswer: 2,
-    explanation: {
-      de: 'Um 20 + 15 zu addieren, denke: 20 + 10 = 30, dann 30 + 5 = 35. Einfach!',
-      en: 'To add 20 + 15, think: 20 + 10 = 30, then 30 + 5 = 35. Easy!'
-    }
-  },
-  {
-    id: 8,
-    difficulty: 'easy',
-    points: 3,
-    topic: 'time',
-    question: {
-      de: 'Wie viele Minuten sind in 1 Stunde?',
-      en: 'How many minutes are in 1 hour?'
-    },
-    options: {
-      de: ['30', '45', '60', '90', '100'],
-      en: ['30', '45', '60', '90', '100']
-    },
-    correctAnswer: 2,
-    explanation: {
-      de: '1 Stunde = 60 Minuten. Merke: 60 Sekunden in einer Minute, 60 Minuten in einer Stunde!',
-      en: '1 hour = 60 minutes. Remember: 60 seconds in a minute, 60 minutes in an hour!'
-    }
-  },
-  {
-    id: 9,
-    templateId: 'multiplication_basic',
-    difficulty: 'easy',
-    points: 3,
-    topic: 'arithmetic',
-    question: {
-      de: 'Was ist 5 × 2?',
-      en: 'What is 5 × 2?'
-    },
-    options: {
-      de: ['7', '8', '10', '12', '15'],
-      en: ['7', '8', '10', '12', '15']
-    },
-    correctAnswer: 2,
-    explanation: {
-      de: '5 × 2 = 5 + 5 = 10. Es bedeutet "2 Gruppen von 5" oder "5 Gruppen von 2"!',
-      en: '5 × 2 = 5 + 5 = 10. It means "2 groups of 5" or "5 groups of 2"!'
-    }
-  },
-  {
-    id: 10,
-    templateId: 'pattern_skip_counting',
-    difficulty: 'easy',
-    points: 3,
-    topic: 'patterns',
-    question: {
-      de: 'Welche Zahl kommt als nächstes? 10, 20, 30, 40, ?',
-      en: 'What number comes next? 10, 20, 30, 40, ?'
-    },
-    options: {
-      de: ['45', '50', '55', '60', '70'],
-      en: ['45', '50', '55', '60', '70']
-    },
-    correctAnswer: 1,
-    explanation: {
-      de: 'Dieses Muster addiert jedes Mal 10: 10, 20 (+10), 30 (+10), 40 (+10), also kommt als nächstes 50!',
-      en: 'This pattern adds 10 each time: 10, 20 (+10), 30 (+10), 40 (+10), so next is 50!'
-    }
-  },
-  {
     id: 11,
     difficulty: 'easy',
     points: 3,
@@ -341,6 +223,7 @@ const questionBank = [
   },
   {
     id: 12,
+    templateId: 'word_problem_addition',
     difficulty: 'easy',
     points: 3,
     topic: 'logic',
@@ -360,6 +243,7 @@ const questionBank = [
   },
   {
     id: 13,
+    templateId: 'subtraction_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
@@ -398,6 +282,7 @@ const questionBank = [
   },
   {
     id: 15,
+    templateId: 'multiplication_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
@@ -417,6 +302,7 @@ const questionBank = [
   },
   {
     id: 16,
+    templateId: 'addition_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'patterns',
@@ -436,6 +322,7 @@ const questionBank = [
   },
   {
     id: 17,
+    templateId: 'pattern_skip_counting',
     difficulty: 'easy',
     points: 3,
     topic: 'logic',
@@ -455,6 +342,7 @@ const questionBank = [
   },
   {
     id: 18,
+    templateId: 'subtraction_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'geometry',
@@ -474,6 +362,7 @@ const questionBank = [
   },
   {
     id: 19,
+    templateId: 'multiplication_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
@@ -493,6 +382,7 @@ const questionBank = [
   },
   {
     id: 20,
+    templateId: 'word_problem_addition',
     difficulty: 'easy',
     points: 3,
     topic: 'time',
@@ -514,6 +404,7 @@ const questionBank = [
   // MEDIUM QUESTIONS (4 points each) - 20 questions
   {
     id: 21,
+    templateId: 'addition_basic',
     difficulty: 'medium',
     points: 4,
     topic: 'arithmetic',
@@ -533,6 +424,7 @@ const questionBank = [
   },
   {
     id: 22,
+    templateId: 'multiplication_medium',
     difficulty: 'medium',
     points: 4,
     topic: 'arithmetic',
@@ -552,6 +444,7 @@ const questionBank = [
   },
   {
     id: 23,
+    templateId: 'double_number',
     difficulty: 'medium',
     points: 4,
     topic: 'logic',
@@ -590,6 +483,7 @@ const questionBank = [
   },
   {
     id: 25,
+    templateId: 'rectangle_perimeter',
     difficulty: 'medium',
     points: 4,
     topic: 'geometry',
@@ -609,6 +503,7 @@ const questionBank = [
   },
   {
     id: 26,
+    templateId: 'division_simple',
     difficulty: 'medium',
     points: 4,
     topic: 'arithmetic',
@@ -628,6 +523,7 @@ const questionBank = [
   },
   {
     id: 27,
+    templateId: 'multiplication_medium',
     difficulty: 'medium',
     points: 4,
     topic: 'logic',
@@ -647,6 +543,7 @@ const questionBank = [
   },
   {
     id: 28,
+    templateId: 'word_problem_subtraction',
     difficulty: 'medium',
     points: 4,
     topic: 'patterns',
@@ -666,6 +563,7 @@ const questionBank = [
   },
   {
     id: 29,
+    templateId: 'addition_basic',
     difficulty: 'medium',
     points: 4,
     topic: 'measurement',
@@ -685,6 +583,7 @@ const questionBank = [
   },
   {
     id: 30,
+    templateId: 'word_problem_two_step',
     difficulty: 'medium',
     points: 4,
     topic: 'arithmetic',

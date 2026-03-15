@@ -29,11 +29,11 @@ function generateMultipleChoice(correctAnswer, count = 5) {
 }
 
 // Difficulty multipliers affect number ranges
-// easy: smaller numbers, normal: standard, hard: larger numbers (all under 1000 for grade 3)
+// easy: smaller numbers, normal: more challenging, hard: larger numbers (all under 1000 for grade 3)
 const difficultyRanges = {
   easy: { multiplier: 0.7, maxValue: 50 },
-  normal: { multiplier: 1.0, maxValue: 100 },
-  hard: { multiplier: 1.5, maxValue: 200 }
+  normal: { multiplier: 1.2, maxValue: 150 },  // Increased from 1.0 and 100
+  hard: { multiplier: 1.8, maxValue: 300 }      // Increased from 1.5 and 200
 };
 
 function adjustRange(min, max, difficultyLevel = 'normal') {
@@ -420,6 +420,192 @@ const questionTemplates = {
         explanation: {
           de: `${number} wird auf ${answer} gerundet. Die Einerstelle ist ${ones}, also runden wir ${ones >= 5 ? 'auf' : 'ab'}.`,
           en: `${number} rounds to ${answer}. The ones digit is ${ones}, so we round ${ones >= 5 ? 'up' : 'down'}.`
+        }
+      };
+    }
+  },
+
+  // Three-number addition (Medium)
+  addition_three_numbers: {
+    difficulty: 'medium',
+    points: 4,
+    topic: 'arithmetic',
+    generate: (difficultyLevel = 'normal') => {
+      const range = adjustRange(5, 15, difficultyLevel);
+      const a = randomInt(range.min, range.max);
+      const b = randomInt(range.min, range.max);
+      const c = randomInt(range.min, range.max);
+      const answer = a + b + c;
+      const options = generateMultipleChoice(answer);
+      return {
+        question: {
+          de: `Was ist ${a} + ${b} + ${c}?`,
+          en: `What is ${a} + ${b} + ${c}?`
+        },
+        options: options,
+        correctAnswer: options.de.indexOf(String(answer)),
+        explanation: {
+          de: `${a} + ${b} + ${c} = ${answer}. Du kannst zuerst ${a} + ${b} = ${a + b} rechnen, dann ${a + b} + ${c} = ${answer}.`,
+          en: `${a} + ${b} + ${c} = ${answer}. You can first calculate ${a} + ${b} = ${a + b}, then ${a + b} + ${c} = ${answer}.`
+        }
+      };
+    }
+  },
+
+  // Mixed operations (Medium)
+  mixed_operations: {
+    difficulty: 'medium',
+    points: 4,
+    topic: 'arithmetic',
+    generate: (difficultyLevel = 'normal') => {
+      const range = adjustRange(10, 20, difficultyLevel);
+      const a = randomInt(range.min, range.max);
+      const b = randomInt(3, 8);
+      const c = randomInt(3, 8);
+      const answer = a + b - c;
+      const options = generateMultipleChoice(answer);
+      return {
+        question: {
+          de: `Was ist ${a} + ${b} - ${c}?`,
+          en: `What is ${a} + ${b} - ${c}?`
+        },
+        options: options,
+        correctAnswer: options.de.indexOf(String(answer)),
+        explanation: {
+          de: `${a} + ${b} - ${c} = ${answer}. Rechne von links nach rechts: ${a} + ${b} = ${a + b}, dann ${a + b} - ${c} = ${answer}.`,
+          en: `${a} + ${b} - ${c} = ${answer}. Calculate left to right: ${a} + ${b} = ${a + b}, then ${a + b} - ${c} = ${answer}.`
+        }
+      };
+    }
+  },
+
+  // Double/Halve (Easy)
+  double_number: {
+    difficulty: 'easy',
+    points: 3,
+    topic: 'arithmetic',
+    generate: (difficultyLevel = 'normal') => {
+      const range = adjustRange(5, 25, difficultyLevel);
+      const a = randomInt(range.min, range.max);
+      const answer = a * 2;
+      const options = generateMultipleChoice(answer);
+      return {
+        question: {
+          de: `Was ist das Doppelte von ${a}?`,
+          en: `What is double ${a}?`
+        },
+        options: options,
+        correctAnswer: options.de.indexOf(String(answer)),
+        explanation: {
+          de: `Das Doppelte von ${a} ist ${a} × 2 = ${answer}.`,
+          en: `Double ${a} is ${a} × 2 = ${answer}.`
+        }
+      };
+    }
+  },
+
+  // Finding missing number in sequence (Medium)
+  missing_in_sequence: {
+    difficulty: 'medium',
+    points: 4,
+    topic: 'patterns',
+    generate: (difficultyLevel = 'normal') => {
+      const range = adjustRange(3, 8, difficultyLevel);
+      const start = randomInt(range.min, range.max);
+      const step = randomInt(2, 4);
+      const position = randomInt(2, 4); // Which position is missing
+      const seq = [start, start + step, start + 2*step, start + 3*step, start + 4*step];
+      const answer = seq[position];
+      seq[position] = '?';
+      const options = generateMultipleChoice(answer);
+      return {
+        question: {
+          de: `Welche Zahl fehlt? ${seq.join(', ')}`,
+          en: `What number is missing? ${seq.join(', ')}`
+        },
+        options: options,
+        correctAnswer: options.de.indexOf(String(answer)),
+        explanation: {
+          de: `Das Muster erhöht sich jeweils um ${step}. Die fehlende Zahl ist ${answer}.`,
+          en: `The pattern increases by ${step} each time. The missing number is ${answer}.`
+        }
+      };
+    }
+  },
+
+  // Simple equations (Medium)
+  simple_equation: {
+    difficulty: 'medium',
+    points: 4,
+    topic: 'algebra',
+    generate: (difficultyLevel = 'normal') => {
+      const range = adjustRange(5, 15, difficultyLevel);
+      const answer = randomInt(range.min, range.max);
+      const b = randomInt(3, 10);
+      const result = answer + b;
+      const options = generateMultipleChoice(answer);
+      return {
+        question: {
+          de: `Was ist x, wenn x + ${b} = ${result}?`,
+          en: `What is x when x + ${b} = ${result}?`
+        },
+        options: options,
+        correctAnswer: options.de.indexOf(String(answer)),
+        explanation: {
+          de: `x + ${b} = ${result}, also ist x = ${result} - ${b} = ${answer}.`,
+          en: `x + ${b} = ${result}, so x = ${result} - ${b} = ${answer}.`
+        }
+      };
+    }
+  },
+
+  // Area/Perimeter (Hard)
+  rectangle_perimeter: {
+    difficulty: 'hard',
+    points: 5,
+    topic: 'geometry',
+    generate: (difficultyLevel = 'normal') => {
+      const range = adjustRange(4, 12, difficultyLevel);
+      const length = randomInt(range.min, range.max);
+      const width = randomInt(range.min, Math.floor(length * 0.8));
+      const answer = 2 * (length + width);
+      const options = generateMultipleChoice(answer);
+      return {
+        question: {
+          de: `Ein Rechteck ist ${length} cm lang und ${width} cm breit. Was ist der Umfang?`,
+          en: `A rectangle is ${length} cm long and ${width} cm wide. What is the perimeter?`
+        },
+        options: options,
+        correctAnswer: options.de.indexOf(String(answer)),
+        explanation: {
+          de: `Umfang = 2 × (Länge + Breite) = 2 × (${length} + ${width}) = 2 × ${length + width} = ${answer} cm.`,
+          en: `Perimeter = 2 × (length + width) = 2 × (${length} + ${width}) = 2 × ${length + width} = ${answer} cm.`
+        }
+      };
+    }
+  },
+
+  // Money problems (Medium)
+  money_change: {
+    difficulty: 'medium',
+    points: 4,
+    topic: 'word_problems',
+    generate: (difficultyLevel = 'normal') => {
+      const range = adjustRange(20, 50, difficultyLevel);
+      const paid = randomInt(range.min, range.max);
+      const cost = randomInt(Math.floor(paid * 0.6), paid - 5);
+      const answer = paid - cost;
+      const options = generateMultipleChoice(answer);
+      return {
+        question: {
+          de: `Du kaufst etwas für ${cost}€ und bezahlst mit ${paid}€. Wie viel Wechselgeld bekommst du?`,
+          en: `You buy something for ${cost}€ and pay with ${paid}€. How much change do you get?`
+        },
+        options: options,
+        correctAnswer: options.de.indexOf(String(answer)),
+        explanation: {
+          de: `Wechselgeld = ${paid}€ - ${cost}€ = ${answer}€.`,
+          en: `Change = ${paid}€ - ${cost}€ = ${answer}€.`
         }
       };
     }
