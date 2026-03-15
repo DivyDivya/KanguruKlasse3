@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Känguru Mathematik Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Language Toggle (Always Visible) -->
+    <div class="language-toggle">
+        <button id="langToggle" class="lang-btn" aria-label="Switch language">
+            <span class="flag">🇩🇪</span>
+            <span class="lang-text">DE</span>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Home Screen -->
+        <div id="homeScreen" class="screen active">
+            <header class="app-header">
+                <h1>🦘 Känguru Mathematik Quiz</h1>
+                <p class="subtitle" data-de="Wähle ein Jahr zum Üben" data-en="Choose a year to practice">Wähle ein Jahr zum Üben</p>
+            </header>
+
+            <div class="year-selection">
+                <!-- Years will be populated by JavaScript -->
+            </div>
+
+            <div class="practice-section">
+                <button id="practiceWrongBtn" class="practice-btn" disabled>
+                    <span data-de="📝 Falsche Antworten üben" data-en="📝 Practice Wrong Answers">📝 Falsche Antworten üben</span>
+                    <span class="wrong-count">(0)</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-header">
+                <button id="backBtn" class="icon-btn" aria-label="Back">←</button>
+                <div class="quiz-info">
+                    <h2 id="quizTitle">Känguru 2025</h2>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p class="progress-text">
+                        <span data-de="Frage" data-en="Question">Frage</span>
+                        <span id="currentQuestion">1</span> / <span id="totalQuestions">24</span>
+                    </p>
+                </div>
+                <div class="score-display">
+                    <span id="scoreValue">24</span> <span data-de="Punkte" data-en="Points">Punkte</span>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-header">
+                    <span class="question-id" id="questionId">A1</span>
+                    <span class="question-points">
+                        <span id="questionPoints">3</span> <span data-de="Punkte" data-en="Points">Punkte</span>
+                    </span>
+                </div>
+
+                <div class="question-content">
+                    <div class="question-image-wrapper">
+                        <img id="questionImage" src="" alt="Question" class="question-image">
+                        <button id="expandImageBtn" class="expand-btn" title="Bild vergrößern">🔍</button>
+                    </div>
+                    <p id="questionText" class="question-text"></p>
+                </div>
+
+                <div class="options-container" id="optionsContainer">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+
+                <!-- Feedback Section -->
+                <div id="feedback" class="feedback hidden">
+                    <div class="feedback-header">
+                        <span class="feedback-icon"></span>
+                        <span class="feedback-title"></span>
+                    </div>
+                    <div class="feedback-reasoning"></div>
+                    <button id="nextBtn" class="next-btn">
+                        <span data-de="Weiter" data-en="Next">Weiter</span> →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-container">
+                <h2 data-de="Quiz abgeschlossen!" data-en="Quiz Complete!">Quiz abgeschlossen!</h2>
+                <div class="final-score">
+                    <span id="finalScore">0</span>
+                    <span data-de="Punkte" data-en="Points">Punkte</span>
+                </div>
+                <div class="results-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="correctCount">0</span>
+                        <span class="stat-label" data-de="Richtig" data-en="Correct">Richtig</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="wrongCount">0</span>
+                        <span class="stat-label" data-de="Falsch" data-en="Wrong">Falsch</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="skippedCount">0</span>
+                        <span class="stat-label" data-de="Übersprungen" data-en="Skipped">Übersprungen</span>
+                    </div>
+                </div>
+                <div class="results-actions">
+                    <button id="homeBtn" class="action-btn">
+                        <span data-de="Zurück zur Startseite" data-en="Back to Home">Zurück zur Startseite</span>
+                    </button>
+                    <button id="retryBtn" class="action-btn primary">
+                        <span data-de="Nochmal versuchen" data-en="Try Again">Nochmal versuchen</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Popup Modal -->
+    <div id="imageModal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeModal" class="close-btn">✕</button>
+            <img id="modalImage" src="" alt="Enlarged Question">
+        </div>
+    </div>
+
+    <script src="questions-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

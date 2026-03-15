@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Test</title>
+</head>
+<body>
+    <h1>Debug Test</h1>
+    <button id="test-btn">Click Me</button>
+    <div id="output"></div>
+
+    <script src="questions-data.js"></script>
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('test-btn').addEventListener('click', () => {
+                const output = document.getElementById('output');
+                output.innerHTML = '<p>Button clicked!</p>';
+
+                // Test if questionBank is loaded
+                output.innerHTML += '<p>questionBank loaded: ' + (typeof questionBank !== 'undefined') + '</p>';
+                output.innerHTML += '<p>questionBank length: ' + (questionBank ? questionBank.length : 'undefined') + '</p>';
+
+                // Test if quizManager exists
+                output.innerHTML += '<p>quizManager exists: ' + (typeof quizManager !== 'undefined') + '</p>';
+
+                // Try to generate a quiz
+                try {
+                    const result = quizManager.generateQuiz('new');
+                    output.innerHTML += '<p>Quiz generated: ' + result + '</p>';
+                    output.innerHTML += '<p>Quiz length: ' + quizManager.currentQuiz.length + '</p>';
+                } catch (e) {
+                    output.innerHTML += '<p style="color: red;">Error: ' + e.message + '</p>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
