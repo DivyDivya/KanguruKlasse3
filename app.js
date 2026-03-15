@@ -496,7 +496,7 @@ function renderQuestion() {
   const questionText = document.getElementById('question-text');
   const imageNum = questionImageMap[question.questionId] || 2;
   const imagePath = `images/${question.year}/image${imageNum}.png`;
-  questionText.innerHTML = `<img src="${imagePath}" alt="Question ${question.questionId}" style="max-width: 100%; height: auto;" onerror="this.parentElement.innerHTML='<p>Frage ${question.questionId} (Jahr ${question.year})</p>'">`;
+  questionText.innerHTML = `<img src="${imagePath}" alt="Question ${question.questionId}" class="question-image" style="max-width: 100%; height: auto; cursor: zoom-in;" onerror="this.parentElement.innerHTML='<p>Frage ${question.questionId} (Jahr ${question.year})</p>'" title="Click to zoom">`;
 
   // Render options (A-E radio buttons)
   const optionsContainer = document.getElementById('options-container');
@@ -845,6 +845,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('close-difficulty-modal').addEventListener('click', () => {
     document.getElementById('difficulty-practice-modal').classList.add('hidden');
+  });
+
+  // Image Lightbox functionality
+  document.getElementById('close-image-lightbox').addEventListener('click', () => {
+    document.getElementById('image-lightbox-modal').classList.add('hidden');
+  });
+
+  // Close lightbox when clicking on the image or outside
+  document.getElementById('image-lightbox-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'image-lightbox-modal' || e.target.id === 'lightbox-image') {
+      document.getElementById('image-lightbox-modal').classList.add('hidden');
+    }
+  });
+
+  // Add click listener to question images (delegated event)
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('question-image')) {
+      const lightboxModal = document.getElementById('image-lightbox-modal');
+      const lightboxImage = document.getElementById('lightbox-image');
+      lightboxImage.src = e.target.src;
+      lightboxImage.alt = e.target.alt;
+      lightboxModal.classList.remove('hidden');
+    }
   });
 
   // Close modals when clicking outside
