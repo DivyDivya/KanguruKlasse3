@@ -1,28 +1,29 @@
-// Kanguru Math Practice App - Core Logic
+// Kanguru Math Practice App - Simplified Image-Based Version
+// Uses real Kanguru test questions from 2010-2025 as images
 
 // ============================================
 // CONSTANTS
 // ============================================
-const STARTING_BONUS = 24; // Official Känguru starting points
-const MAX_SCORE = 120; // 24 starting + 96 possible from 24 questions
+const STARTING_BONUS = 24;
+const MAX_SCORE = 120;
 
 // ============================================
 // TRANSLATIONS
 // ============================================
 const translations = {
   de: {
-    // Home view
     home_title: "🦘 Känguru Mathe-Übung",
     home_subtitle: "Klasse 3/4 - Übung für den Mathe-Wettbewerb!",
     start_new_quiz: "Neuen Übungstest starten",
     quiz_details: "24 Fragen • 3-5 Punkte je Frage",
+    practice_difficulty: "Nach Schwierigkeit üben",
+    practice_difficulty_detail: "Übe nur leichte, mittlere oder schwere Fragen",
     review_wrong: "Falsche Antworten üben",
     review_detail: "Übe Fragen, die du falsch hattest",
     view_history: "Vergangene Tests ansehen",
     history_detail: "Sieh deinen Fortschritt und Ergebnisse",
     questions_to_practice: "Fragen zum Üben",
 
-    // Quiz view
     back: "← Zurück",
     question_of: "Frage",
     of: "von",
@@ -34,26 +35,24 @@ const translations = {
     submit_answer: "Antwort einreichen",
     next_question: "Nächste Frage →",
     quit_confirm: "Bist du sicher, dass du aufhören möchtest? Dein Fortschritt geht verloren.",
-    regenerate_question: "Neue Zahlen generieren",
-    cannot_regenerate: "Diese Frage kann nicht regeneriert werden.",
 
-    // Difficulty selection
-    select_difficulty: "Wähle Schwierigkeitsgrad",
-    difficulty_description: "Wähle, wie schwer die Zahlen in den Aufgaben sein sollen:",
-    difficulty_easy: "Einfach",
-    difficulty_easy_detail: "Kleinere Zahlen (bis 50)",
-    difficulty_normal: "Normal",
-    difficulty_normal_detail: "Standard Zahlen (bis 100)",
-    difficulty_hard: "Herausfordernd",
-    difficulty_hard_detail: "Größere Zahlen (bis 200)",
+    select_year: "Wähle Test-Jahr",
+    year_description: "Wähle ein Jahr des Känguru-Wettbewerbs:",
 
-    // Feedback
+    select_difficulty_practice: "Wähle Schwierigkeitsgrad",
+    difficulty_practice_description: "Übe Fragen eines bestimmten Schwierigkeitsgrads aus allen Jahren:",
+    difficulty_easy: "Leicht",
+    difficulty_easy_practice: "3 Punkte • A1-A8",
+    difficulty_medium: "Mittel",
+    difficulty_medium_practice: "4 Punkte • B1-B8",
+    difficulty_hard: "Schwer",
+    difficulty_hard_practice: "5 Punkte • C1-C8",
+
     correct: "Richtig!",
     not_quite: "Nicht ganz richtig",
     points_earned: "Punkte verdient! 🎉",
     correct_answer_was: "Die richtige Antwort war:",
 
-    // Results view
     test_complete: "🎉 Test abgeschlossen!",
     your_score: "Deine Punktzahl",
     correct: "Richtig",
@@ -63,42 +62,37 @@ const translations = {
     save_and_home: "Speichern & zum Startbildschirm",
     try_again: "Einen weiteren Test versuchen",
 
-    // Encouragement messages
     excellent: "🌟 Hervorragend! Du bist ein Mathe-Star!",
     great: "🎯 Großartig! Du machst das richtig gut!",
     good: "👍 Gute Arbeit! Weiter üben!",
     keep_trying: "💪 Gut gemacht! Übung macht den Meister!",
 
-    // History view
     back_to_home: "← Zurück zum Startbildschirm",
     your_test_history: "📊 Deine Test-Historie",
     no_tests_yet: "Noch keine Tests! Starte deinen ersten Übungstest, um hier deinen Fortschritt zu sehen.",
-    your_practice_tests: "Deine Übungstests",
     test_details: "Test-Details",
     all_questions: "Alle Fragen:",
     your_answer: "Deine Antwort:",
 
-    // Score breakdown
     starting_points: "Startpunkte",
     earned: "Verdient",
     penalty: "Abzug",
 
-    // Alerts
     no_wrong_answers: "Keine falschen Antworten zum Üben! Mache zuerst einen Übungstest."
   },
   en: {
-    // Home view
     home_title: "🦘 Kangaroo Math Practice",
     home_subtitle: "Class 3/4 - Practice for the Math Contest!",
     start_new_quiz: "Start New Practice Test",
     quiz_details: "24 questions • 3-5 points each",
+    practice_difficulty: "Practice by Difficulty",
+    practice_difficulty_detail: "Practice only easy, medium, or hard questions",
     review_wrong: "Review Wrong Answers",
     review_detail: "Practice questions you got wrong",
     view_history: "View Past Tests",
     history_detail: "See your progress and scores",
     questions_to_practice: "questions to practice",
 
-    // Quiz view
     back: "← Back",
     question_of: "Question",
     of: "of",
@@ -110,26 +104,24 @@ const translations = {
     submit_answer: "Submit Answer",
     next_question: "Next Question →",
     quit_confirm: "Are you sure you want to quit? Your progress will be lost.",
-    regenerate_question: "Generate New Numbers",
-    cannot_regenerate: "This question cannot be regenerated.",
 
-    // Difficulty selection
-    select_difficulty: "Choose Difficulty Level",
-    difficulty_description: "Choose how hard the numbers in the questions should be:",
+    select_year: "Choose Test Year",
+    year_description: "Choose a Kangaroo competition year:",
+
+    select_difficulty_practice: "Choose Difficulty Level",
+    difficulty_practice_description: "Practice questions of a specific difficulty from all years:",
     difficulty_easy: "Easy",
-    difficulty_easy_detail: "Smaller numbers (up to 50)",
-    difficulty_normal: "Normal",
-    difficulty_normal_detail: "Standard numbers (up to 100)",
-    difficulty_hard: "Challenging",
-    difficulty_hard_detail: "Larger numbers (up to 200)",
+    difficulty_easy_practice: "3 points • A1-A8",
+    difficulty_medium: "Medium",
+    difficulty_medium_practice: "4 points • B1-B8",
+    difficulty_hard: "Hard",
+    difficulty_hard_practice: "5 points • C1-C8",
 
-    // Feedback
     correct: "Correct!",
     not_quite: "Not quite right",
     points_earned: "points earned! 🎉",
     correct_answer_was: "The correct answer was:",
 
-    // Results view
     test_complete: "🎉 Test Complete!",
     your_score: "Your Score",
     correct: "Correct",
@@ -139,27 +131,22 @@ const translations = {
     save_and_home: "Save & Go Home",
     try_again: "Try Another Test",
 
-    // Encouragement messages
     excellent: "🌟 Outstanding! You're a math superstar!",
     great: "🎯 Great job! You're doing really well!",
     good: "👍 Good effort! Keep practicing!",
     keep_trying: "💪 Nice try! Practice makes perfect!",
 
-    // History view
     back_to_home: "← Back to Home",
     your_test_history: "📊 Your Test History",
     no_tests_yet: "No tests yet! Start your first practice test to see your progress here.",
-    your_practice_tests: "Your Practice Tests",
     test_details: "Test Details",
     all_questions: "All Questions:",
     your_answer: "Your answer:",
 
-    // Score breakdown
     starting_points: "Starting",
     earned: "Earned",
     penalty: "Penalty",
 
-    // Alerts
     no_wrong_answers: "No wrong answers to review yet! Take a practice test first."
   }
 };
@@ -183,19 +170,11 @@ class LanguageManager {
   }
 
   updateUI() {
-    // Update all text elements with data-i18n attributes
     document.querySelectorAll('[data-i18n]').forEach(element => {
       const key = element.getAttribute('data-i18n');
-      const translation = this.t(key);
-
-      if (element.tagName === 'INPUT' || element.tagName === 'BUTTON') {
-        element.textContent = translation;
-      } else {
-        element.textContent = translation;
-      }
+      element.textContent = this.t(key);
     });
 
-    // Update language toggle buttons (home and quiz views)
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
       langToggle.textContent = this.currentLang === 'de' ? 'EN' : 'DE';
@@ -205,7 +184,6 @@ class LanguageManager {
       quizLangToggle.textContent = this.currentLang === 'de' ? 'EN' : 'DE';
     }
 
-    // Re-render current view if needed
     if (document.getElementById('home-view').classList.contains('active')) {
       ViewManager.updateWrongAnswersCount();
     }
@@ -219,86 +197,59 @@ class QuizManager {
   constructor() {
     this.currentQuiz = [];
     this.currentQuestionIndex = 0;
-    this.score = STARTING_BONUS; // Start with 24 points
+    this.score = STARTING_BONUS;
     this.startTime = null;
     this.timerInterval = null;
     this.userAnswers = [];
-    this.isReviewMode = false; // Track if in review mode
-    this.originalQuestionIds = new Map(); // Map regenerated questions to original IDs
-    this.difficultyLevel = 'normal'; // Track selected difficulty level (easy/normal/hard)
+    this.currentYear = null;
+    this.practiceMode = null; // 'year' or 'difficulty'
+    this.practiceDifficulty = null; // 'easy', 'medium', 'hard'
   }
 
-  // Generate a new quiz
-  generateQuiz(mode = 'new', difficultyLevel = 'normal') {
+  // Generate quiz from specific year
+  generateQuiz(year) {
     this.reset();
-    this.difficultyLevel = difficultyLevel;
+    this.currentYear = year;
+    this.practiceMode = 'year';
 
-    if (mode === 'new') {
-      this.isReviewMode = false;
-      // Generate 24 questions: 8 easy, 8 medium, 8 hard (official Känguru format)
-      const easyQuestions = this.getRandomQuestions('easy', 8);
-      const mediumQuestions = this.getRandomQuestions('medium', 8);
-      const hardQuestions = this.getRandomQuestions('hard', 8);
-
-      this.currentQuiz = [...easyQuestions, ...mediumQuestions, ...hardQuestions];
-
-      // Apply difficulty level by regenerating questions with templates
-      this.currentQuiz = this.currentQuiz.map(question => {
-        if (question.templateId && questionTemplates[question.templateId]) {
-          return this.regenerateQuestionWithDifficulty(question, difficultyLevel);
-        }
-        return question; // Keep original if no template
-      });
-
-      // Shuffle the quiz so difficulties are mixed
-      this.shuffleArray(this.currentQuiz);
-    } else if (mode === 'review') {
-      this.isReviewMode = true;
-      // Get questions from wrong answers pool
-      const wrongAnswersPool = historyManager.getWrongAnswersPool();
-
-      if (wrongAnswersPool.length === 0) {
-        alert(languageManager.t('no_wrong_answers'));
-        return false;
-      }
-
-      // Get up to 24 questions from wrong answers
-      const questionsToReview = wrongAnswersPool.slice(0, Math.min(24, wrongAnswersPool.length));
-      this.currentQuiz = questionsToReview.map(id =>
-        questionBank.find(q => q.id === id)
-      ).filter(q => q !== undefined);
-
-      this.shuffleArray(this.currentQuiz);
+    if (!tests[year]) {
+      alert('Test year not found!');
+      return false;
     }
 
+    this.currentQuiz = tests[year];
     this.startTime = Date.now();
     this.startTimer();
     return true;
   }
 
-  // Regenerate a question with specific difficulty level
-  regenerateQuestionWithDifficulty(question, difficultyLevel) {
-    if (!question.templateId || !questionTemplates[question.templateId]) {
-      return question;
+  // Generate quiz from specific difficulty level (all years)
+  generateDifficultyQuiz(difficulty) {
+    this.reset();
+    this.practiceMode = 'difficulty';
+    this.practiceDifficulty = difficulty;
+
+    // Collect all questions of this difficulty from all years
+    const allQuestions = [];
+    availableYears.forEach(year => {
+      if (tests[year]) {
+        const filtered = tests[year].filter(q => q.difficulty === difficulty);
+        allQuestions.push(...filtered);
+      }
+    });
+
+    if (allQuestions.length === 0) {
+      alert('No questions found for this difficulty!');
+      return false;
     }
 
-    const template = questionTemplates[question.templateId];
-    const newVariation = template.generate(difficultyLevel);
+    // Shuffle and take up to 24 questions
+    this.shuffleArray(allQuestions);
+    this.currentQuiz = allQuestions.slice(0, Math.min(24, allQuestions.length));
 
-    return {
-      ...question,
-      question: newVariation.question,
-      options: newVariation.options,
-      correctAnswer: newVariation.correctAnswer,
-      explanation: newVariation.explanation
-    };
-  }
-
-  // Get random questions by difficulty
-  getRandomQuestions(difficulty, count) {
-    const filteredQuestions = questionBank.filter(q => q.difficulty === difficulty);
-    const shuffled = [...filteredQuestions].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, count);
+    this.startTime = Date.now();
+    this.startTimer();
+    return true;
   }
 
   // Shuffle array in place
@@ -309,54 +260,14 @@ class QuizManager {
     }
   }
 
-  // Get current question
   getCurrentQuestion() {
     return this.currentQuiz[this.currentQuestionIndex];
   }
 
-  // Regenerate current question with new numbers
-  regenerateCurrentQuestion() {
-    const currentIndex = this.currentQuestionIndex;
-    const question = this.currentQuiz[currentIndex];
-
-    // Check if question has a template
-    if (!question.templateId || !questionTemplates[question.templateId]) {
-      return false; // Cannot regenerate
-    }
-
-    // Get template and generate new variation with current difficulty level
-    const template = questionTemplates[question.templateId];
-    const newVariation = template.generate(this.difficultyLevel);
-
-    // Create new question object maintaining same structure
-    const regeneratedQuestion = {
-      ...question,
-      question: newVariation.question,
-      options: newVariation.options,
-      correctAnswer: newVariation.correctAnswer,
-      explanation: newVariation.explanation,
-      id: `${question.id}_regen_${Date.now()}`, // unique ID
-      isRegenerated: true
-    };
-
-    // Store original ID mapping if not already stored
-    if (!this.originalQuestionIds.has(currentIndex)) {
-      this.originalQuestionIds.set(currentIndex, question.id);
-    }
-
-    // Replace in quiz array
-    this.currentQuiz[currentIndex] = regeneratedQuestion;
-
-    return true;
-  }
-
-  // Submit an answer
   submitAnswer(answerIndex) {
     const question = this.getCurrentQuestion();
-    const lang = languageManager.currentLang;
     const isCorrect = answerIndex === question.correctAnswer;
 
-    // Calculate points with penalty system
     let pointsEarned = 0;
     let pointsDeducted = 0;
 
@@ -364,45 +275,40 @@ class QuizManager {
       pointsEarned = question.points;
       this.score += question.points;
     } else {
-      // Penalty: deduct 1/4 of question points
       pointsDeducted = question.points * 0.25;
-      this.score = Math.max(0, this.score - pointsDeducted); // Never go below 0
+      this.score = Math.max(0, this.score - pointsDeducted);
     }
 
     const result = {
       questionId: question.id,
-      question: question.question[lang] || question.question,
+      questionImage: `images/${question.year}/image${questionImageMap[question.questionId] || 2}.png`,
       userAnswer: answerIndex,
       correctAnswer: question.correctAnswer,
       correct: isCorrect,
       pointsEarned: pointsEarned,
       pointsDeducted: pointsDeducted,
-      explanation: question.explanation[lang] || question.explanation,
-      options: question.options[lang] || question.options
+      year: question.year,
+      questionNumber: question.questionId
     };
 
     this.userAnswers.push(result);
     return result;
   }
 
-  // Move to next question
   nextQuestion() {
     this.currentQuestionIndex++;
     return this.currentQuestionIndex < this.currentQuiz.length;
   }
 
-  // Get quiz results
   getResults() {
     const timeInSeconds = Math.floor((Date.now() - this.startTime) / 1000);
     const correctCount = this.userAnswers.filter(a => a.correct).length;
     const wrongCount = this.userAnswers.length - correctCount;
 
-    // Calculate total penalties
     const totalPenalty = this.userAnswers
       .filter(a => !a.correct)
       .reduce((sum, a) => sum + a.pointsDeducted, 0);
 
-    // Calculate points earned (excluding starting bonus)
     const pointsEarned = this.userAnswers
       .filter(a => a.correct)
       .reduce((sum, a) => sum + a.pointsEarned, 0);
@@ -419,11 +325,13 @@ class QuizManager {
       userAnswers: this.userAnswers,
       startingBonus: STARTING_BONUS,
       pointsEarned: pointsEarned,
-      totalPenalty: totalPenalty
+      totalPenalty: totalPenalty,
+      year: this.currentYear,
+      practiceMode: this.practiceMode,
+      practiceDifficulty: this.practiceDifficulty
     };
   }
 
-  // Start timer
   startTimer() {
     this.timerInterval = setInterval(() => {
       const elapsed = Math.floor((Date.now() - this.startTime) / 1000);
@@ -434,7 +342,6 @@ class QuizManager {
     }, 1000);
   }
 
-  // Stop timer
   stopTimer() {
     if (this.timerInterval) {
       clearInterval(this.timerInterval);
@@ -442,16 +349,15 @@ class QuizManager {
     }
   }
 
-  // Reset quiz state
   reset() {
     this.currentQuiz = [];
     this.currentQuestionIndex = 0;
-    this.score = STARTING_BONUS; // Reset to starting bonus
+    this.score = STARTING_BONUS;
     this.startTime = null;
     this.userAnswers = [];
-    this.isReviewMode = false;
-    this.originalQuestionIds.clear();
-    this.difficultyLevel = 'normal';
+    this.currentYear = null;
+    this.practiceMode = null;
+    this.practiceDifficulty = null;
     this.stopTimer();
   }
 }
@@ -465,7 +371,6 @@ class HistoryManager {
     this.wrongAnswersKey = 'kanguru-wrong-answers';
   }
 
-  // Save test to history
   saveTest(results) {
     const history = this.getHistory();
 
@@ -479,42 +384,39 @@ class HistoryManager {
       correctCount: results.correctCount,
       wrongCount: results.wrongCount,
       timeInSeconds: results.timeInSeconds,
-      userAnswers: results.userAnswers
+      userAnswers: results.userAnswers,
+      year: results.year,
+      practiceMode: results.practiceMode,
+      practiceDifficulty: results.practiceDifficulty
     };
 
-    history.unshift(testRecord); // Add to beginning
+    history.unshift(testRecord);
     localStorage.setItem(this.storageKey, JSON.stringify(history));
 
-    // Update wrong answers pool
     this.updateWrongAnswers(results.userAnswers);
 
     return testRecord;
   }
 
-  // Get all test history
   getHistory() {
     const data = localStorage.getItem(this.storageKey);
     return data ? JSON.parse(data) : [];
   }
 
-  // Get specific test
   getTest(id) {
     const history = this.getHistory();
     return history.find(test => test.id === id);
   }
 
-  // Update wrong answers pool
   updateWrongAnswers(userAnswers) {
     let wrongPool = this.getWrongAnswersPool();
 
     userAnswers.forEach(answer => {
       if (!answer.correct) {
-        // Add to wrong pool if not already there
         if (!wrongPool.includes(answer.questionId)) {
           wrongPool.push(answer.questionId);
         }
       } else {
-        // Remove from wrong pool if answered correctly
         wrongPool = wrongPool.filter(id => id !== answer.questionId);
       }
     });
@@ -522,13 +424,11 @@ class HistoryManager {
     localStorage.setItem(this.wrongAnswersKey, JSON.stringify(wrongPool));
   }
 
-  // Get wrong answers pool
   getWrongAnswersPool() {
     const data = localStorage.getItem(this.wrongAnswersKey);
     return data ? JSON.parse(data) : [];
   }
 
-  // Clear all data
   clearAll() {
     localStorage.removeItem(this.storageKey);
     localStorage.removeItem(this.wrongAnswersKey);
@@ -581,49 +481,45 @@ const ViewManager = {
 // ============================================
 function renderQuestion() {
   const question = quizManager.getCurrentQuestion();
-  const lang = languageManager.currentLang;
 
-  // Update progress
   document.getElementById('current-q-num').textContent = quizManager.currentQuestionIndex + 1;
   document.getElementById('total-q-num').textContent = quizManager.currentQuiz.length;
   document.getElementById('current-score').textContent = Math.round(quizManager.score * 100) / 100;
 
-  // Update difficulty badge
   const badge = document.getElementById('difficulty-badge');
   const difficultyText = languageManager.t(question.difficulty);
   const ptsText = languageManager.t('pts');
   badge.textContent = `${difficultyText.charAt(0).toUpperCase() + difficultyText.slice(1)} • ${question.points} ${ptsText}`;
   badge.className = `difficulty-badge ${question.difficulty}`;
 
-  // Update question text (support bilingual)
-  const questionText = question.question[lang] || question.question;
-  document.getElementById('question-text').textContent = questionText;
+  // Display question image
+  const questionText = document.getElementById('question-text');
+  const imageNum = questionImageMap[question.questionId] || 2;
+  const imagePath = `images/${question.year}/image${imageNum}.png`;
+  questionText.innerHTML = `<img src="${imagePath}" alt="Question ${question.questionId}" style="max-width: 100%; height: auto;" onerror="this.parentElement.innerHTML='<p>Frage ${question.questionId} (Jahr ${question.year})</p>'">`;
 
-  // Render options (support bilingual)
+  // Render options (A-E radio buttons)
   const optionsContainer = document.getElementById('options-container');
   optionsContainer.innerHTML = '';
 
-  const options = question.options[lang] || question.options;
-  options.forEach((option, index) => {
+  ['A', 'B', 'C', 'D', 'E'].forEach((letter, index) => {
     const optionDiv = document.createElement('div');
     optionDiv.className = 'option';
     optionDiv.innerHTML = `
       <input type="radio" name="answer" id="option-${index}" value="${index}">
       <label for="option-${index}">
-        <span class="option-letter">${String.fromCharCode(65 + index)}</span>
-        <span class="option-text">${option}</span>
+        <span class="option-letter">${letter}</span>
       </label>
     `;
     optionsContainer.appendChild(optionDiv);
   });
 
-  // Add click handlers to options
+  // Add click handlers
   document.querySelectorAll('.option').forEach((option, index) => {
     option.addEventListener('click', () => {
       document.getElementById(`option-${index}`).checked = true;
       document.getElementById('submit-answer-btn').disabled = false;
 
-      // Visual feedback
       document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
       option.classList.add('selected');
     });
@@ -632,15 +528,7 @@ function renderQuestion() {
   // Reset submit button
   const submitBtn = document.getElementById('submit-answer-btn');
   submitBtn.disabled = true;
-  submitBtn.style.display = ''; // Reset display style to show button
-
-  // Show/hide regenerate button
-  const regenBtn = document.getElementById('regenerate-question-btn');
-  if (quizManager.isReviewMode && question.templateId) {
-    regenBtn.classList.remove('hidden');
-  } else {
-    regenBtn.classList.add('hidden');
-  }
+  submitBtn.style.display = '';
 
   // Hide feedback card
   document.getElementById('feedback-card').classList.add('hidden');
@@ -653,6 +541,8 @@ function showFeedback(result) {
   const feedbackExplanation = document.getElementById('feedback-explanation');
   const feedbackPoints = document.getElementById('feedback-points');
 
+  const correctLetter = String.fromCharCode(65 + result.correctAnswer); // Convert 0-4 to A-E
+
   if (result.correct) {
     feedbackCard.className = 'feedback-card correct';
     feedbackIcon.textContent = '✓';
@@ -663,13 +553,12 @@ function showFeedback(result) {
     feedbackIcon.textContent = '✗';
     feedbackTitle.textContent = languageManager.t('not_quite');
     const penaltyText = result.pointsDeducted > 0 ? ` (-${result.pointsDeducted.toFixed(2)} ${languageManager.t('pts')})` : '';
-    feedbackPoints.textContent = `${languageManager.t('correct_answer_was')} ${result.options[result.correctAnswer]}${penaltyText}`;
+    feedbackPoints.textContent = `${languageManager.t('correct_answer_was')} ${correctLetter}${penaltyText}`;
   }
 
-  feedbackExplanation.textContent = result.explanation;
+  feedbackExplanation.textContent = ''; // No explanation available for image-based questions
   feedbackCard.classList.remove('hidden');
 
-  // Disable options
   document.querySelectorAll('.option input').forEach(input => input.disabled = true);
   document.getElementById('submit-answer-btn').style.display = 'none';
 
@@ -686,13 +575,11 @@ function showFeedback(result) {
 function renderResults() {
   const results = quizManager.getResults();
 
-  // Update score display with breakdown
   document.getElementById('final-score').textContent = Math.round(results.score * 100) / 100;
   document.getElementById('score-percentage').textContent = `${results.percentage}%`;
   document.getElementById('correct-count').textContent = results.correctCount;
   document.getElementById('wrong-count').textContent = results.wrongCount;
 
-  // Show score breakdown
   const scoreBreakdown = document.getElementById('score-breakdown');
   if (scoreBreakdown) {
     const startText = languageManager.t('starting_points');
@@ -717,12 +604,10 @@ function renderResults() {
     `;
   }
 
-  // Format time
   const minutes = Math.floor(results.timeInSeconds / 60);
   const seconds = results.timeInSeconds % 60;
   document.getElementById('time-taken').textContent = `${minutes}:${String(seconds).padStart(2, '0')}`;
 
-  // Encouragement message
   const encouragement = document.getElementById('encouragement-message');
   if (results.percentage >= 90) {
     encouragement.textContent = languageManager.t('excellent');
@@ -738,7 +623,6 @@ function renderResults() {
     encouragement.className = 'encouragement-message keep-trying';
   }
 
-  // Show wrong answers
   const wrongAnswersList = document.getElementById('wrong-answers-list');
   wrongAnswersList.innerHTML = '';
 
@@ -754,12 +638,13 @@ function renderResults() {
       div.className = 'wrong-answer-item';
       const yourAnswerText = languageManager.t('your_answer');
       const correctAnswerText = languageManager.t('correct_answer_was').replace(':', '');
+      const userAnswerLetter = String.fromCharCode(65 + answer.userAnswer);
+      const correctAnswerLetter = String.fromCharCode(65 + answer.correctAnswer);
 
       div.innerHTML = `
-        <div class="wrong-q-text">${answer.question}</div>
-        <div class="wrong-q-your">${yourAnswerText} ${answer.options[answer.userAnswer]}</div>
-        <div class="wrong-q-correct">${correctAnswerText}: ${answer.options[answer.correctAnswer]}</div>
-        <div class="wrong-q-explain">${answer.explanation}</div>
+        <div class="wrong-q-text">Frage ${answer.questionNumber} (Jahr ${answer.year})</div>
+        <div class="wrong-q-your">${yourAnswerText} ${userAnswerLetter}</div>
+        <div class="wrong-q-correct">${correctAnswerText}: ${correctAnswerLetter}</div>
       `;
       wrongAnswersList.appendChild(div);
     });
@@ -795,8 +680,10 @@ function renderHistory() {
       const seconds = test.timeInSeconds % 60;
       const timeStr = `${minutes}:${String(seconds).padStart(2, '0')}`;
 
+      const yearLabel = test.year ? `Jahr ${test.year}` : (test.practiceDifficulty ? `Schwierigkeit: ${test.practiceDifficulty}` : '?');
+
       div.innerHTML = `
-        <div class="history-date">${date}</div>
+        <div class="history-date">${date} - ${yearLabel}</div>
         <div class="history-stats">
           <div class="history-score">
             <span class="history-score-value">${test.score}/${test.maxScore}</span>
@@ -810,66 +697,9 @@ function renderHistory() {
         </div>
       `;
 
-      div.addEventListener('click', () => showTestDetail(test));
-
       historyList.appendChild(div);
     });
   }
-}
-
-function showTestDetail(test) {
-  const modal = document.getElementById('test-detail-modal');
-  const modalBody = document.getElementById('modal-body');
-
-  const date = new Date(test.timestamp).toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
-
-  const minutes = Math.floor(test.timeInSeconds / 60);
-  const seconds = test.timeInSeconds % 60;
-  const timeStr = `${minutes}:${String(seconds).padStart(2, '0')}`;
-
-  let html = `
-    <div class="test-detail-summary">
-      <div class="detail-date">${date}</div>
-      <div class="detail-score-big">${test.score}/${test.maxScore} (${test.percentage}%)</div>
-      <div class="detail-stats">
-        <span>✓ Correct: ${test.correctCount}</span>
-        <span>✗ Wrong: ${test.wrongCount}</span>
-        <span>⏱️ Time: ${timeStr}</span>
-      </div>
-    </div>
-    <div class="test-detail-questions">
-      <h3>All Questions:</h3>
-  `;
-
-  test.userAnswers.forEach((answer, index) => {
-    const statusClass = answer.correct ? 'correct' : 'wrong';
-    const statusIcon = answer.correct ? '✓' : '✗';
-
-    html += `
-      <div class="detail-question ${statusClass}">
-        <div class="detail-q-header">
-          <span class="detail-q-num">Q${index + 1}</span>
-          <span class="detail-q-status">${statusIcon}</span>
-          <span class="detail-q-points">${answer.pointsEarned} pts</span>
-        </div>
-        <div class="detail-q-text">${answer.question}</div>
-        <div class="detail-q-your">Your answer: ${answer.options[answer.userAnswer]}</div>
-        ${!answer.correct ? `<div class="detail-q-correct">Correct answer: ${answer.options[answer.correctAnswer]}</div>` : ''}
-        <div class="detail-q-explain">${answer.explanation}</div>
-      </div>
-    `;
-  });
-
-  html += '</div>';
-
-  modalBody.innerHTML = html;
-  modal.classList.remove('hidden');
 }
 
 // ============================================
@@ -880,7 +710,7 @@ const historyManager = new HistoryManager();
 const languageManager = new LanguageManager();
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize language toggle button
+  // Initialize language toggle
   const header = document.querySelector('#home-view header');
   const langToggle = document.createElement('button');
   langToggle.id = 'lang-toggle';
@@ -894,40 +724,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Home view buttons
   document.getElementById('start-new-quiz-btn').addEventListener('click', () => {
-    // Show difficulty selection modal
-    document.getElementById('difficulty-modal').classList.remove('hidden');
+    document.getElementById('year-modal').classList.remove('hidden');
   });
 
-  // Difficulty selection handlers
-  document.getElementById('difficulty-easy-btn').addEventListener('click', () => {
-    document.getElementById('difficulty-modal').classList.add('hidden');
-    if (quizManager.generateQuiz('new', 'easy')) {
+  // Practice by difficulty button
+  document.getElementById('practice-difficulty-btn').addEventListener('click', () => {
+    document.getElementById('difficulty-practice-modal').classList.remove('hidden');
+  });
+
+  // Difficulty practice handlers
+  document.getElementById('practice-easy-btn').addEventListener('click', () => {
+    document.getElementById('difficulty-practice-modal').classList.add('hidden');
+    if (quizManager.generateDifficultyQuiz('easy')) {
       ViewManager.showQuiz();
       renderQuestion();
     }
   });
 
-  document.getElementById('difficulty-normal-btn').addEventListener('click', () => {
-    document.getElementById('difficulty-modal').classList.add('hidden');
-    if (quizManager.generateQuiz('new', 'normal')) {
+  document.getElementById('practice-medium-btn').addEventListener('click', () => {
+    document.getElementById('difficulty-practice-modal').classList.add('hidden');
+    if (quizManager.generateDifficultyQuiz('medium')) {
       ViewManager.showQuiz();
       renderQuestion();
     }
   });
 
-  document.getElementById('difficulty-hard-btn').addEventListener('click', () => {
-    document.getElementById('difficulty-modal').classList.add('hidden');
-    if (quizManager.generateQuiz('new', 'hard')) {
+  document.getElementById('practice-hard-btn').addEventListener('click', () => {
+    document.getElementById('difficulty-practice-modal').classList.add('hidden');
+    if (quizManager.generateDifficultyQuiz('hard')) {
       ViewManager.showQuiz();
       renderQuestion();
     }
+  });
+
+  // Year selection handlers
+  availableYears.forEach(year => {
+    const btn = document.createElement('button');
+    btn.className = 'year-option-btn';
+    btn.innerHTML = `
+      <span class="year-icon">📅</span>
+      <span class="year-name">${year}</span>
+      <span class="year-detail">Känguru ${year}</span>
+    `;
+    btn.addEventListener('click', () => {
+      document.getElementById('year-modal').classList.add('hidden');
+      if (quizManager.generateQuiz(year)) {
+        ViewManager.showQuiz();
+        renderQuestion();
+      }
+    });
+    document.getElementById('year-options-container').appendChild(btn);
   });
 
   document.getElementById('review-wrong-btn').addEventListener('click', () => {
-    if (quizManager.generateQuiz('review')) {
-      ViewManager.showQuiz();
-      renderQuestion();
-    }
+    alert(languageManager.t('no_wrong_answers'));
   });
 
   document.getElementById('view-history-btn').addEventListener('click', () => {
@@ -942,14 +792,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Quiz language toggle button
   document.getElementById('quiz-lang-toggle').addEventListener('click', () => {
     const newLang = languageManager.currentLang === 'de' ? 'en' : 'de';
     languageManager.setLanguage(newLang);
-    // Update the quiz toggle button text
     document.getElementById('quiz-lang-toggle').textContent = languageManager.currentLang === 'de' ? 'EN' : 'DE';
-    // Re-render the current question with new language
-    renderQuestion();
   });
 
   document.getElementById('submit-answer-btn').addEventListener('click', () => {
@@ -958,15 +804,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const answerIndex = parseInt(selectedOption.value);
       const result = quizManager.submitAnswer(answerIndex);
       showFeedback(result);
-    }
-  });
-
-  document.getElementById('regenerate-question-btn').addEventListener('click', () => {
-    if (quizManager.regenerateCurrentQuestion()) {
-      renderQuestion(); // Re-render with new numbers
-    } else {
-      // Show message if regeneration not possible
-      alert(languageManager.t('cannot_regenerate'));
     }
   });
 
@@ -993,8 +830,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const results = quizManager.getResults();
     historyManager.saveTest(results);
     ViewManager.showHome();
-    // Show difficulty modal for next test
-    document.getElementById('difficulty-modal').classList.remove('hidden');
+    document.getElementById('year-modal').classList.remove('hidden');
   });
 
   // History view buttons
@@ -1002,15 +838,25 @@ document.addEventListener('DOMContentLoaded', () => {
     ViewManager.showHome();
   });
 
-  // Modal close button
-  document.getElementById('close-modal-btn').addEventListener('click', () => {
-    document.getElementById('test-detail-modal').classList.add('hidden');
+  // Modal close buttons
+  document.getElementById('close-year-modal').addEventListener('click', () => {
+    document.getElementById('year-modal').classList.add('hidden');
   });
 
-  // Close modal when clicking outside
-  document.getElementById('test-detail-modal').addEventListener('click', (e) => {
-    if (e.target.id === 'test-detail-modal') {
-      document.getElementById('test-detail-modal').classList.add('hidden');
+  document.getElementById('close-difficulty-modal').addEventListener('click', () => {
+    document.getElementById('difficulty-practice-modal').classList.add('hidden');
+  });
+
+  // Close modals when clicking outside
+  document.getElementById('year-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'year-modal') {
+      document.getElementById('year-modal').classList.add('hidden');
+    }
+  });
+
+  document.getElementById('difficulty-practice-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'difficulty-practice-modal') {
+      document.getElementById('difficulty-practice-modal').classList.add('hidden');
     }
   });
 
