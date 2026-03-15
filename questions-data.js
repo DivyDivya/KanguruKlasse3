@@ -6,6 +6,7 @@ const questionBank = [
   // EASY QUESTIONS (3 points each) - 20 questions
   {
     id: 1,
+    templateId: 'addition_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
@@ -25,6 +26,7 @@ const questionBank = [
   },
   {
     id: 2,
+    templateId: 'subtraction_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
@@ -44,6 +46,7 @@ const questionBank = [
   },
   {
     id: 3,
+    templateId: 'multiplication_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
@@ -63,6 +66,7 @@ const questionBank = [
   },
   {
     id: 4,
+    templateId: 'pattern_arithmetic_easy',
     difficulty: 'easy',
     points: 3,
     topic: 'patterns',
@@ -101,6 +105,7 @@ const questionBank = [
   },
   {
     id: 6,
+    templateId: 'word_problem_subtraction',
     difficulty: 'easy',
     points: 3,
     topic: 'logic',
@@ -120,6 +125,7 @@ const questionBank = [
   },
   {
     id: 7,
+    templateId: 'addition_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
@@ -158,6 +164,7 @@ const questionBank = [
   },
   {
     id: 9,
+    templateId: 'multiplication_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
@@ -177,6 +184,7 @@ const questionBank = [
   },
   {
     id: 10,
+    templateId: 'pattern_skip_counting',
     difficulty: 'easy',
     points: 3,
     topic: 'patterns',
@@ -215,6 +223,7 @@ const questionBank = [
   },
   {
     id: 6,
+    templateId: 'word_problem_subtraction',
     difficulty: 'easy',
     points: 3,
     topic: 'logic',
@@ -234,6 +243,7 @@ const questionBank = [
   },
   {
     id: 7,
+    templateId: 'addition_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
@@ -272,6 +282,7 @@ const questionBank = [
   },
   {
     id: 9,
+    templateId: 'multiplication_basic',
     difficulty: 'easy',
     points: 3,
     topic: 'arithmetic',
@@ -291,6 +302,7 @@ const questionBank = [
   },
   {
     id: 10,
+    templateId: 'pattern_skip_counting',
     difficulty: 'easy',
     points: 3,
     topic: 'patterns',
