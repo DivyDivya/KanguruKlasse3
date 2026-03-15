@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🦘 Känguru Mathe-Übung - Klasse 3/4</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-responsive-override.css">
 </head>
 <body>
     <!-- Home View -->
@@ -19,6 +20,12 @@
                 <span class="btn-icon">🎯</span>
                 <span class="btn-text" data-i18n="start_new_quiz">Neuen Übungstest starten</span>
                 <span class="btn-detail" data-i18n="quiz_details">24 Fragen • 3-5 Punkte je Frage</span>
+            </button>
+
+            <button id="practice-difficulty-btn" class="menu-btn secondary">
+                <span class="btn-icon">🎯</span>
+                <span class="btn-text" data-i18n="practice_difficulty">Nach Schwierigkeit üben</span>
+                <span class="btn-detail" data-i18n="practice_difficulty_detail">Übe nur leichte, mittlere oder schwere Fragen</span>
             </button>
 
             <button id="review-wrong-btn" class="menu-btn secondary">
@@ -61,11 +68,7 @@
                     <!-- Options will be inserted here dynamically -->
                 </div>
 
-                <div class="quiz-controls">
-                    <button id="regenerate-question-btn" class="regenerate-btn hidden">
-                        🔄 <span data-i18n="regenerate_question">Neue Zahlen generieren</span>
-                    </button>
-                </div>
+                <!-- No regeneration for image-based questions -->
 
                 <button id="submit-answer-btn" class="submit-btn" disabled data-i18n="submit_answer">Antwort einreichen</button>
             </div>
@@ -161,39 +164,57 @@
         </div>
     </div>
 
-    <!-- Difficulty Selection Modal -->
-    <div id="difficulty-modal" class="modal hidden">
+    <!-- Year Selection Modal -->
+    <div id="year-modal" class="modal hidden">
         <div class="modal-content difficulty-modal">
             <div class="modal-header">
-                <h2 data-i18n="select_difficulty">Wähle Schwierigkeitsgrad</h2>
+                <h2 data-i18n="select_year">Wähle Test-Jahr</h2>
+                <button id="close-year-modal" class="close-modal-btn">×</button>
             </div>
             <div class="modal-body">
-                <p class="difficulty-description" data-i18n="difficulty_description">
-                    Wähle, wie schwer die Zahlen in den Aufgaben sein sollen:
+                <p class="difficulty-description" data-i18n="year_description">
+                    Wähle ein Jahr des Känguru-Wettbewerbs:
                 </p>
-                <div class="difficulty-options">
-                    <button id="difficulty-easy-btn" class="difficulty-option-btn easy-btn">
+                <div class="difficulty-options" id="year-options-container">
+                    <!-- Year buttons will be added dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Difficulty Practice Modal -->
+    <div id="difficulty-practice-modal" class="modal hidden">
+        <div class="modal-content difficulty-modal">
+            <div class="modal-header">
+                <h2 data-i18n="select_difficulty_practice">Wähle Schwierigkeitsgrad</h2>
+                <button id="close-difficulty-modal" class="close-modal-btn">×</button>
+            </div>
+            <div class="modal-body">
+                <p class="difficulty-description" data-i18n="difficulty_practice_description">
+                    Übe Fragen eines bestimmten Schwierigkeitsgrads aus allen Jahren:
+                </p>
+                <div class="difficulty-options" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <button id="practice-easy-btn" class="difficulty-option-btn easy-btn">
                         <span class="difficulty-icon">🐣</span>
-                        <span class="difficulty-name" data-i18n="difficulty_easy">Einfach</span>
-                        <span class="difficulty-detail" data-i18n="difficulty_easy_detail">Kleinere Zahlen (bis 50)</span>
+                        <span class="difficulty-name" data-i18n="difficulty_easy">Leicht</span>
+                        <span class="difficulty-detail" data-i18n="difficulty_easy_practice">3 Punkte • A1-A8</span>
                     </button>
-                    <button id="difficulty-normal-btn" class="difficulty-option-btn normal-btn">
+                    <button id="practice-medium-btn" class="difficulty-option-btn normal-btn">
                         <span class="difficulty-icon">🦘</span>
-                        <span class="difficulty-name" data-i18n="difficulty_normal">Normal</span>
-                        <span class="difficulty-detail" data-i18n="difficulty_normal_detail">Standard Zahlen (bis 100)</span>
+                        <span class="difficulty-name" data-i18n="difficulty_medium">Mittel</span>
+                        <span class="difficulty-detail" data-i18n="difficulty_medium_practice">4 Punkte • B1-B8</span>
                     </button>
-                    <button id="difficulty-hard-btn" class="difficulty-option-btn hard-btn">
+                    <button id="practice-hard-btn" class="difficulty-option-btn hard-btn">
                         <span class="difficulty-icon">🚀</span>
-                        <span class="difficulty-name" data-i18n="difficulty_hard">Herausfordernd</span>
-                        <span class="difficulty-detail" data-i18n="difficulty_hard_detail">Größere Zahlen (bis 200)</span>
+                        <span class="difficulty-name" data-i18n="difficulty_hard">Schwer</span>
+                        <span class="difficulty-detail" data-i18n="difficulty_hard_practice">5 Punkte • C1-C8</span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="questions-data.js"></script>
-    <script src="question-templates.js"></script>
+    <script src="tests-data.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
