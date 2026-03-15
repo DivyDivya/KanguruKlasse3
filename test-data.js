@@ -3877,8 +3877,8 @@ const tests = {
   ]
 };
 
-// Array of all available test years
-const availableYears = ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"];
+// Array of all available test years (only years with extracted images)
+const availableYears = ["2023", "2024", "2025"];
 
 // Question ID to image number mapping
 const questionImageMap = {"A1": 2, "A2": 4, "A3": 6, "A4": 8, "A5": 10, "A6": 12, "A7": 14, "A8": 16, "B1": 18, "B2": 20, "B3": 22, "B4": 24, "B5": 26, "B6": 28, "B7": 30, "B8": 32, "C1": 34, "C2": 36, "C3": 38, "C4": 40, "C5": 42, "C6": 44, "C7": 46, "C8": 48};
