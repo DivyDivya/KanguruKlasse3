@@ -214,6 +214,14 @@
         </div>
     </div>
 
+    <!-- Image Lightbox Modal -->
+    <div id="image-lightbox-modal" class="modal hidden" style="z-index: 2000;">
+        <div class="modal-content" style="max-width: 95vw; max-height: 95vh; background: transparent; box-shadow: none; padding: 0;">
+            <button id="close-image-lightbox" class="close-modal-btn" style="position: absolute; top: 10px; right: 10px; z-index: 2001; background: rgba(255, 255, 255, 0.9); width: 40px; height: 40px; font-size: 28px; border-radius: 50%;">×</button>
+            <img id="lightbox-image" src="" alt="Question Zoom" style="max-width: 100%; max-height: 95vh; display: block; margin: 0 auto; cursor: zoom-out; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+        </div>
+    </div>
+
     <script src="tests-data.js"></script>
     <script src="app.js"></script>
 </body>
