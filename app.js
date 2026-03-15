@@ -462,7 +462,7 @@ const ViewManager = {
 
   showHistory() {
     this.showView('history-view');
-    this.renderHistory();
+    renderHistory();
   },
 
   updateWrongAnswersCount() {
