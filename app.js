@@ -171,10 +171,14 @@ class LanguageManager {
       }
     });
 
-    // Update language toggle button
+    // Update language toggle buttons (home and quiz views)
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
       langToggle.textContent = this.currentLang === 'de' ? 'EN' : 'DE';
+    }
+    const quizLangToggle = document.getElementById('quiz-lang-toggle');
+    if (quizLangToggle) {
+      quizLangToggle.textContent = this.currentLang === 'de' ? 'EN' : 'DE';
     }
 
     // Re-render current view if needed
@@ -809,6 +813,16 @@ document.addEventListener('DOMContentLoaded', () => {
       quizManager.reset();
       ViewManager.showHome();
     }
+  });
+
+  // Quiz language toggle button
+  document.getElementById('quiz-lang-toggle').addEventListener('click', () => {
+    const newLang = languageManager.currentLang === 'de' ? 'en' : 'de';
+    languageManager.setLanguage(newLang);
+    // Update the quiz toggle button text
+    document.getElementById('quiz-lang-toggle').textContent = languageManager.currentLang === 'de' ? 'EN' : 'DE';
+    // Re-render the current question with new language
+    renderQuestion();
   });
 
   document.getElementById('submit-answer-btn').addEventListener('click', () => {
