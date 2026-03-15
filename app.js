@@ -34,6 +34,18 @@ const translations = {
     submit_answer: "Antwort einreichen",
     next_question: "Nächste Frage →",
     quit_confirm: "Bist du sicher, dass du aufhören möchtest? Dein Fortschritt geht verloren.",
+    regenerate_question: "Neue Zahlen generieren",
+    cannot_regenerate: "Diese Frage kann nicht regeneriert werden.",
+
+    // Difficulty selection
+    select_difficulty: "Wähle Schwierigkeitsgrad",
+    difficulty_description: "Wähle, wie schwer die Zahlen in den Aufgaben sein sollen:",
+    difficulty_easy: "Einfach",
+    difficulty_easy_detail: "Kleinere Zahlen (bis 50)",
+    difficulty_normal: "Normal",
+    difficulty_normal_detail: "Standard Zahlen (bis 100)",
+    difficulty_hard: "Herausfordernd",
+    difficulty_hard_detail: "Größere Zahlen (bis 200)",
 
     // Feedback
     correct: "Richtig!",
@@ -98,6 +110,18 @@ const translations = {
     submit_answer: "Submit Answer",
     next_question: "Next Question →",
     quit_confirm: "Are you sure you want to quit? Your progress will be lost.",
+    regenerate_question: "Generate New Numbers",
+    cannot_regenerate: "This question cannot be regenerated.",
+
+    // Difficulty selection
+    select_difficulty: "Choose Difficulty Level",
+    difficulty_description: "Choose how hard the numbers in the questions should be:",
+    difficulty_easy: "Easy",
+    difficulty_easy_detail: "Smaller numbers (up to 50)",
+    difficulty_normal: "Normal",
+    difficulty_normal_detail: "Standard numbers (up to 100)",
+    difficulty_hard: "Challenging",
+    difficulty_hard_detail: "Larger numbers (up to 200)",
 
     // Feedback
     correct: "Correct!",
@@ -199,22 +223,37 @@ class QuizManager {
     this.startTime = null;
     this.timerInterval = null;
     this.userAnswers = [];
+    this.isReviewMode = false; // Track if in review mode
+    this.originalQuestionIds = new Map(); // Map regenerated questions to original IDs
+    this.difficultyLevel = 'normal'; // Track selected difficulty level (easy/normal/hard)
   }
 
   // Generate a new quiz
-  generateQuiz(mode = 'new') {
+  generateQuiz(mode = 'new', difficultyLevel = 'normal') {
     this.reset();
+    this.difficultyLevel = difficultyLevel;
 
     if (mode === 'new') {
+      this.isReviewMode = false;
       // Generate 24 questions: 8 easy, 8 medium, 8 hard (official Känguru format)
       const easyQuestions = this.getRandomQuestions('easy', 8);
       const mediumQuestions = this.getRandomQuestions('medium', 8);
       const hardQuestions = this.getRandomQuestions('hard', 8);
 
       this.currentQuiz = [...easyQuestions, ...mediumQuestions, ...hardQuestions];
+
+      // Apply difficulty level by regenerating questions with templates
+      this.currentQuiz = this.currentQuiz.map(question => {
+        if (question.templateId && questionTemplates[question.templateId]) {
+          return this.regenerateQuestionWithDifficulty(question, difficultyLevel);
+        }
+        return question; // Keep original if no template
+      });
+
       // Shuffle the quiz so difficulties are mixed
       this.shuffleArray(this.currentQuiz);
     } else if (mode === 'review') {
+      this.isReviewMode = true;
       // Get questions from wrong answers pool
       const wrongAnswersPool = historyManager.getWrongAnswersPool();
 
@@ -237,6 +276,24 @@ class QuizManager {
     return true;
   }
 
+  // Regenerate a question with specific difficulty level
+  regenerateQuestionWithDifficulty(question, difficultyLevel) {
+    if (!question.templateId || !questionTemplates[question.templateId]) {
+      return question;
+    }
+
+    const template = questionTemplates[question.templateId];
+    const newVariation = template.generate(difficultyLevel);
+
+    return {
+      ...question,
+      question: newVariation.question,
+      options: newVariation.options,
+      correctAnswer: newVariation.correctAnswer,
+      explanation: newVariation.explanation
+    };
+  }
+
   // Get random questions by difficulty
   getRandomQuestions(difficulty, count) {
     const filteredQuestions = questionBank.filter(q => q.difficulty === difficulty);
@@ -255,6 +312,42 @@ class QuizManager {
   // Get current question
   getCurrentQuestion() {
     return this.currentQuiz[this.currentQuestionIndex];
+  }
+
+  // Regenerate current question with new numbers
+  regenerateCurrentQuestion() {
+    const currentIndex = this.currentQuestionIndex;
+    const question = this.currentQuiz[currentIndex];
+
+    // Check if question has a template
+    if (!question.templateId || !questionTemplates[question.templateId]) {
+      return false; // Cannot regenerate
+    }
+
+    // Get template and generate new variation with current difficulty level
+    const template = questionTemplates[question.templateId];
+    const newVariation = template.generate(this.difficultyLevel);
+
+    // Create new question object maintaining same structure
+    const regeneratedQuestion = {
+      ...question,
+      question: newVariation.question,
+      options: newVariation.options,
+      correctAnswer: newVariation.correctAnswer,
+      explanation: newVariation.explanation,
+      id: `${question.id}_regen_${Date.now()}`, // unique ID
+      isRegenerated: true
+    };
+
+    // Store original ID mapping if not already stored
+    if (!this.originalQuestionIds.has(currentIndex)) {
+      this.originalQuestionIds.set(currentIndex, question.id);
+    }
+
+    // Replace in quiz array
+    this.currentQuiz[currentIndex] = regeneratedQuestion;
+
+    return true;
   }
 
   // Submit an answer
@@ -356,6 +449,9 @@ class QuizManager {
     this.score = STARTING_BONUS; // Reset to starting bonus
     this.startTime = null;
     this.userAnswers = [];
+    this.isReviewMode = false;
+    this.originalQuestionIds.clear();
+    this.difficultyLevel = 'normal';
     this.stopTimer();
   }
 }
@@ -537,6 +633,14 @@ function renderQuestion() {
   const submitBtn = document.getElementById('submit-answer-btn');
   submitBtn.disabled = true;
   submitBtn.style.display = ''; // Reset display style to show button
+
+  // Show/hide regenerate button
+  const regenBtn = document.getElementById('regenerate-question-btn');
+  if (quizManager.isReviewMode && question.templateId) {
+    regenBtn.classList.remove('hidden');
+  } else {
+    regenBtn.classList.add('hidden');
+  }
 
   // Hide feedback card
   document.getElementById('feedback-card').classList.add('hidden');
@@ -790,7 +894,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Home view buttons
   document.getElementById('start-new-quiz-btn').addEventListener('click', () => {
-    if (quizManager.generateQuiz('new')) {
+    // Show difficulty selection modal
+    document.getElementById('difficulty-modal').classList.remove('hidden');
+  });
+
+  // Difficulty selection handlers
+  document.getElementById('difficulty-easy-btn').addEventListener('click', () => {
+    document.getElementById('difficulty-modal').classList.add('hidden');
+    if (quizManager.generateQuiz('new', 'easy')) {
+      ViewManager.showQuiz();
+      renderQuestion();
+    }
+  });
+
+  document.getElementById('difficulty-normal-btn').addEventListener('click', () => {
+    document.getElementById('difficulty-modal').classList.add('hidden');
+    if (quizManager.generateQuiz('new', 'normal')) {
+      ViewManager.showQuiz();
+      renderQuestion();
+    }
+  });
+
+  document.getElementById('difficulty-hard-btn').addEventListener('click', () => {
+    document.getElementById('difficulty-modal').classList.add('hidden');
+    if (quizManager.generateQuiz('new', 'hard')) {
       ViewManager.showQuiz();
       renderQuestion();
     }
@@ -834,6 +961,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  document.getElementById('regenerate-question-btn').addEventListener('click', () => {
+    if (quizManager.regenerateCurrentQuestion()) {
+      renderQuestion(); // Re-render with new numbers
+    } else {
+      // Show message if regeneration not possible
+      alert(languageManager.t('cannot_regenerate'));
+    }
+  });
+
   document.getElementById('next-question-btn').addEventListener('click', () => {
     const hasMore = quizManager.nextQuestion();
     if (hasMore) {
@@ -856,10 +992,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('try-again-btn').addEventListener('click', () => {
     const results = quizManager.getResults();
     historyManager.saveTest(results);
-    if (quizManager.generateQuiz('new')) {
-      ViewManager.showQuiz();
-      renderQuestion();
-    }
+    ViewManager.showHome();
+    // Show difficulty modal for next test
+    document.getElementById('difficulty-modal').classList.remove('hidden');
   });
 
   // History view buttons
