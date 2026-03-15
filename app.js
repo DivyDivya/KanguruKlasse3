@@ -252,6 +252,45 @@ class QuizManager {
     return true;
   }
 
+  // Generate quiz from wrong answers pool
+  generateWrongAnswersQuiz() {
+    this.reset();
+    this.practiceMode = 'wrong-answers';
+
+    // Get wrong answer question IDs from history
+    const wrongIds = historyManager.getWrongAnswersPool();
+
+    if (wrongIds.length === 0) {
+      alert(languageManager.t('no_wrong_answers'));
+      return false;
+    }
+
+    // Collect all questions that match the wrong IDs
+    const wrongQuestions = [];
+    availableYears.forEach(year => {
+      if (tests[year]) {
+        tests[year].forEach(question => {
+          if (wrongIds.includes(question.id)) {
+            wrongQuestions.push(question);
+          }
+        });
+      }
+    });
+
+    if (wrongQuestions.length === 0) {
+      alert(languageManager.t('no_wrong_answers'));
+      return false;
+    }
+
+    // Shuffle and use all wrong questions
+    this.shuffleArray(wrongQuestions);
+    this.currentQuiz = wrongQuestions;
+
+    this.startTime = Date.now();
+    this.startTimer();
+    return true;
+  }
+
   // Shuffle array in place
   shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -777,7 +816,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('review-wrong-btn').addEventListener('click', () => {
-    alert(languageManager.t('no_wrong_answers'));
+    if (quizManager.generateWrongAnswersQuiz()) {
+      ViewManager.showQuiz();
+      renderQuestion();
+    }
   });
 
   document.getElementById('view-history-btn').addEventListener('click', () => {
