@@ -1,5 +1,11 @@
 /* Additional optimizations for scrolling - Overrides */
 
+/* Hide language toggle buttons */
+.lang-toggle,
+#quiz-lang-toggle {
+  display: none !important;
+}
+
 /* Image Lightbox Styles */
 #image-lightbox-modal {
   display: none;
