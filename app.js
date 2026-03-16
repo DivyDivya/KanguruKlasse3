@@ -168,8 +168,11 @@ class KanguruQuiz {
         this.updateQuizHeader();
         this.renderQuestion();
 
-        // Scroll to top of quiz screen
-        window.scrollTo(0, 0);
+        // Scroll to quiz screen smoothly
+        setTimeout(() => {
+            const quizScreen = document.getElementById('quizScreen');
+            quizScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
     }
 
     startPracticeMode() {
@@ -186,8 +189,11 @@ class KanguruQuiz {
         this.updateQuizHeader();
         this.renderQuestion();
 
-        // Scroll to top of quiz screen
-        window.scrollTo(0, 0);
+        // Scroll to quiz screen smoothly
+        setTimeout(() => {
+            const quizScreen = document.getElementById('quizScreen');
+            quizScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
     }
 
     updateQuizHeader() {
@@ -250,7 +256,7 @@ class KanguruQuiz {
         document.getElementById('feedback').classList.remove('correct', 'wrong');
 
         // Scroll to top of question
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     getPageNumber(questionId) {
@@ -385,8 +391,11 @@ class KanguruQuiz {
 
         this.showScreen('resultsScreen');
 
-        // Scroll to top of results
-        window.scrollTo(0, 0);
+        // Scroll to results screen smoothly
+        setTimeout(() => {
+            const resultsScreen = document.getElementById('resultsScreen');
+            resultsScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
     }
 
     showScreen(screenId) {
@@ -394,9 +403,6 @@ class KanguruQuiz {
             screen.classList.remove('active');
         });
         document.getElementById(screenId).classList.add('active');
-
-        // Scroll to top
-        window.scrollTo(0, 0);
     }
 
     returnToHome() {
