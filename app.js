@@ -83,10 +83,12 @@ class KanguruQuiz {
 
         // Results buttons
         document.getElementById('homeBtn').addEventListener('click', () => {
+            console.log('Home button clicked');
             this.returnToHome();
         });
 
         document.getElementById('retryBtn').addEventListener('click', () => {
+            console.log('Retry button clicked, current year:', this.currentYear);
             this.startQuiz(this.currentYear);
         });
     }
