@@ -433,15 +433,28 @@ class KanguruQuiz {
     }
 
     showScreen(screenId) {
+        console.log('Showing screen:', screenId);
         document.querySelectorAll('.screen').forEach(screen => {
             screen.classList.remove('active');
         });
-        document.getElementById(screenId).classList.add('active');
+        const targetScreen = document.getElementById(screenId);
+        if (targetScreen) {
+            targetScreen.classList.add('active');
+            console.log('Screen activated:', screenId);
+        } else {
+            console.error('Screen not found:', screenId);
+        }
     }
 
     returnToHome() {
+        console.log('Returning to home screen');
         this.renderYearSelection(); // Refresh to show updated scores
         this.showScreen('homeScreen');
+
+        // Scroll to top smoothly
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
     }
 
     showImageModal() {
