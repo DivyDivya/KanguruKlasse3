@@ -51,6 +51,11 @@ class KanguruQuiz {
             this.showImageModal();
         });
 
+        // View full page button
+        document.getElementById('viewPageBtn').addEventListener('click', () => {
+            this.showFullPage();
+        });
+
         // Close modal
         document.getElementById('closeModal').addEventListener('click', () => {
             this.hideImageModal();
@@ -361,6 +366,16 @@ class KanguruQuiz {
 
     hideImageModal() {
         document.getElementById('imageModal').classList.add('hidden');
+    }
+
+    showFullPage() {
+        const question = this.questions[this.currentQuestionIndex];
+        const pageNum = this.getPageNumber(question.id);
+        const pageImage = `images/${question.year || this.currentYear}/page_${pageNum}.png`;
+
+        // Show the full page in the modal
+        document.getElementById('modalImage').src = pageImage;
+        document.getElementById('imageModal').classList.remove('hidden');
     }
 
     // Wrong Questions Management
