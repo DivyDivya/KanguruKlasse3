@@ -425,9 +425,10 @@ class KanguruQuiz {
 
         this.showScreen('resultsScreen');
 
-        // Scroll to top of page smoothly
+        // Scroll to results screen smoothly
         setTimeout(() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const resultsScreen = document.getElementById('resultsScreen');
+            resultsScreen.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
     }
 
