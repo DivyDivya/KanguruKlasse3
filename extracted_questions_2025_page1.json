@@ -1,0 +1,31 @@
+{
+  "2025": {
+    "A1": {
+      "questionTextDE": "Selina lässt ihr Windrad drehen. Rechts ist es zu sehen. Auf welchem der folgenden Bilder ist Selinas Windrad zu sehen?",
+      "hasTextOptions": false
+    },
+    "A2": {
+      "questionTextDE": "Isabell hat auf der Eisbahn einen Handschuh verloren. Wie verlaufen die Spuren unter dem Handschuh?",
+      "hasTextOptions": false
+    },
+    "A3": {
+      "questionTextDE": "Im Bad stehen die Zahnputzbecher so, wie rechts zu sehen ist. Max tauscht erst den größten und den kleinsten Becher und anschließend die beiden gestreiften. Wie stehen die Zahnputzbecher jetzt?",
+      "hasTextOptions": false
+    },
+    "A4": {
+      "questionTextDE": "Simona will die vier Ziffern 2, 0, 2, 5 in die vier Kästchen schreiben und dann das Ergebnis ausrechnen. Bei welcher Reihenfolge erhält sie das größte Ergebnis?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "0, 2, 2, 5"},
+        {"id": "B", "textDE": "0, 5, 2, 2"},
+        {"id": "C", "textDE": "2, 5, 2, 0"},
+        {"id": "D", "textDE": "5, 0, 2, 2"},
+        {"id": "E", "textDE": "5, 2, 0, 2"}
+      ]
+    },
+    "A5": {
+      "questionTextDE": "Lukas hat den Würfel rechts gebaut. Seine Schwester hat fotografiert, wie der Würfel entstanden ist. Sie hat nacheinander die 5 unten abgebildeten Fotos gemacht. Welches Foto hat sie als 4. Foto gemacht?",
+      "hasTextOptions": false
+    }
+  }
+}

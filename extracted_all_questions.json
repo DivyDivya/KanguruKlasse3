@@ -1,0 +1,532 @@
+{
+  "2025": {
+    "A1": {
+      "questionTextDE": "Selina lässt ihr Windrad drehen. Rechts ist es zu sehen. Auf welchem der folgenden Bilder ist Selinas Windrad zu sehen?",
+      "questionTextEN": "Selina spins her pinwheel. It can be seen on the right. In which of the following pictures can Selina's pinwheel be seen?",
+      "hasTextOptions": false
+    },
+    "A2": {
+      "questionTextDE": "Isabell hat auf der Eisbahn einen Handschuh verloren. Wie verlaufen die Spuren unter dem Handschuh?",
+      "questionTextEN": "Isabell lost a glove on the ice rink. How do the tracks run under the glove?",
+      "hasTextOptions": false
+    },
+    "A3": {
+      "questionTextDE": "Im Bad stehen die Zahnputzbecher so, wie rechts zu sehen ist. Max tauscht erst den größten und den kleinsten Becher und anschließend die beiden gestreiften. Wie stehen die Zahnputzbecher jetzt?",
+      "questionTextEN": "In the bathroom, the toothbrush cups are arranged as shown on the right. Max first swaps the largest and smallest cups, then swaps the two striped ones. How are the toothbrush cups arranged now?",
+      "hasTextOptions": false
+    },
+    "A4": {
+      "questionTextDE": "Simona will die vier Ziffern 2, 0, 2, 5 in die vier Kästchen schreiben und dann das Ergebnis ausrechnen. Bei welcher Reihenfolge erhält sie das größte Ergebnis?",
+      "questionTextEN": "Simona wants to write the four digits 2, 0, 2, 5 in the four boxes and then calculate the result. In which order does she get the largest result?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "0, 2, 2, 5", "textEN": "0, 2, 2, 5"},
+        {"id": "B", "textDE": "0, 5, 2, 2", "textEN": "0, 5, 2, 2"},
+        {"id": "C", "textDE": "2, 5, 2, 0", "textEN": "2, 5, 2, 0"},
+        {"id": "D", "textDE": "5, 0, 2, 2", "textEN": "5, 0, 2, 2"},
+        {"id": "E", "textDE": "5, 2, 0, 2", "textEN": "5, 2, 0, 2"}
+      ]
+    },
+    "A5": {
+      "questionTextDE": "Lilly hat aus Würfeln das Foto rechts oben gemacht. Welches Foto hat sie als 4. Foto gemacht?",
+      "questionTextEN": "Lilly took the photo at the top right using cubes. Which photo did she take as the 4th photo?",
+      "hasTextOptions": false
+    },
+    "A6": {
+      "questionTextDE": "Igel Ingmar läuft vom Laubhaufen zum Apfelbaum nach der Regel 2↑ 1↙ 3← 2↖ (siehe Bild). Vom Baum läuft er nach der Regel 2→ 1↘ 2↗ 1↑ weiter. Wo kommt er an?",
+      "questionTextEN": "Hedgehog Ingmar runs from the pile of leaves to the apple tree following the rule 2↑ 1↙ 3← 2↖ (see picture). From the tree he continues following the rule 2→ 1↘ 2↗ 1↑. Where does he arrive?",
+      "hasTextOptions": false
+    },
+    "A7": {
+      "questionTextDE": "Bei welchem Seil erhalten wir einen Knoten, wenn wir an den beiden Enden ziehen?",
+      "questionTextEN": "Which rope will form a knot when we pull on both ends?",
+      "hasTextOptions": false
+    },
+    "A8": {
+      "questionTextDE": "Ben würfelt mit 5 Spielwürfeln insgesamt 18 Augen. Ein Würfel zeigt eine 1, und ein Würfel zeigt eine 2. Die anderen 3 Würfel zeigen alle dieselbe Augenzahl. Welche?",
+      "questionTextEN": "Ben rolls 5 dice for a total of 18 pips. One die shows a 1, and one die shows a 2. The other 3 dice all show the same number. Which?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "1", "textEN": "1"},
+        {"id": "B", "textDE": "2", "textEN": "2"},
+        {"id": "C", "textDE": "3", "textEN": "3"},
+        {"id": "D", "textDE": "4", "textEN": "4"},
+        {"id": "E", "textDE": "5", "textEN": "5"}
+      ]
+    },
+    "B1": {
+      "questionTextDE": "Die drei abgebildeten Stäbe werden sternförmig übereinandergelegt. Wie könnte das aussehen?",
+      "questionTextEN": "The three pictured rods are arranged in a star shape on top of each other. How could that look?",
+      "hasTextOptions": false
+    },
+    "B2": {
+      "questionTextDE": "In ihrem Kaufladen bezahlen Samuel und Alina mit Schneckenhäusern und Steinchen. Ein Schneckenhaus hat den Wert 6 und ein Steinchen den Wert 1. Samuels voller Einkaufskorb hat den Wert 16. Wie könnte Samuel passend bezahlen?",
+      "questionTextEN": "In their toy store, Samuel and Alina pay with snail shells and pebbles. A snail shell has a value of 6 and a pebble has a value of 1. Samuel's full shopping basket has a value of 16. How could Samuel pay appropriately?",
+      "hasTextOptions": false
+    },
+    "B3": {
+      "questionTextDE": "Welche beiden Teile wurden aus dem Schachbrett ausgeschnitten?",
+      "questionTextEN": "Which two pieces were cut from the checkerboard?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "1 und 2", "textEN": "1 and 2"},
+        {"id": "B", "textDE": "1 und 5", "textEN": "1 and 5"},
+        {"id": "C", "textDE": "3 und 4", "textEN": "3 and 4"},
+        {"id": "D", "textDE": "3 und 5", "textEN": "3 and 5"},
+        {"id": "E", "textDE": "4 und 5", "textEN": "4 and 5"}
+      ]
+    },
+    "B4": {
+      "questionTextDE": "",
+      "questionTextEN": "",
+      "hasTextOptions": false,
+      "note": "Image appears blank or missing"
+    },
+    "B5": {
+      "questionTextDE": "Emma, Mathilde und Cem haben Kekse in Känguru-Form gebacken. Ein paar haben sie schon verteilt, wie im Bild rechts. Nun sollen die restlichen 12 Kekse verteilt werden. Am Ende sollen alle gleich viele Kekse haben. Wie viele von den 12 Keksen bekommt Emma?",
+      "questionTextEN": "Emma, Mathilde and Cem have baked cookies in kangaroo shape. They have already distributed some, as shown in the picture on the right. Now the remaining 12 cookies should be distributed. In the end, everyone should have the same number of cookies. How many of the 12 cookies does Emma get?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "5", "textEN": "5"},
+        {"id": "B", "textDE": "6", "textEN": "6"},
+        {"id": "C", "textDE": "8", "textEN": "8"},
+        {"id": "D", "textDE": "9", "textEN": "9"},
+        {"id": "E", "textDE": "10", "textEN": "10"}
+      ]
+    },
+    "B6": {
+      "questionTextDE": "Julian teilt sich mit seinem Bruder eine Pizza. Er will sie entlang einer der Linien halbieren. Aber so, dass jeder gleich viele kleine Tomaten bekommt. Entlang welcher der Linien kann Julian teilen?",
+      "questionTextEN": "Julian shares a pizza with his brother. He wants to cut it in half along one of the lines. But in such a way that each person gets the same number of small tomatoes. Along which of the lines can Julian cut?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "1 oder 4", "textEN": "1 or 4"},
+        {"id": "B", "textDE": "1 oder 3", "textEN": "1 or 3"},
+        {"id": "C", "textDE": "2 oder 4", "textEN": "2 or 4"},
+        {"id": "D", "textDE": "2 oder 3", "textEN": "2 or 3"},
+        {"id": "E", "textDE": "3 oder 4", "textEN": "3 or 4"}
+      ]
+    },
+    "B7": {
+      "questionTextDE": "Im Streichelzoo holt Annabella vom Futterautomaten Futter für die 6 Schafe. Es sind genau 210 Gramm. „Das kleinste Schaf muss noch wachsen", meint Annabella. Sie gibt ihm doppelt so viel Futter wie jedem anderen Schaf. Wie viel Futter gibt Annabella dem kleinsten Schaf?",
+      "questionTextEN": "At the petting zoo, Annabella gets food from the feeding machine for the 6 sheep. It's exactly 210 grams. \"The smallest sheep still needs to grow,\" says Annabella. She gives it twice as much food as each other sheep. How much food does Annabella give to the smallest sheep?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "50 Gramm", "textEN": "50 grams"},
+        {"id": "B", "textDE": "60 Gramm", "textEN": "60 grams"},
+        {"id": "C", "textDE": "65 Gramm", "textEN": "65 grams"},
+        {"id": "D", "textDE": "75 Gramm", "textEN": "75 grams"},
+        {"id": "E", "textDE": "80 Gramm", "textEN": "80 grams"}
+      ]
+    },
+    "B8": {
+      "questionTextDE": "Im Garten von Familie Dorn sind 2 weiße, 2 gelbe und 2 rote Rosen erblüht. Frau Dorn will 3 Rosen abschneiden und einen kleinen Strauß binden. Wie viele verschiedene Sträuße sind möglich?",
+      "questionTextEN": "In the Dorn family's garden, 2 white, 2 yellow and 2 red roses have bloomed. Mrs. Dorn wants to cut 3 roses and tie a small bouquet. How many different bouquets are possible?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "4", "textEN": "4"},
+        {"id": "B", "textDE": "5", "textEN": "5"},
+        {"id": "C", "textDE": "6", "textEN": "6"},
+        {"id": "D", "textDE": "7", "textEN": "7"},
+        {"id": "E", "textDE": "8", "textEN": "8"}
+      ]
+    },
+    "C1": {
+      "questionTextDE": "Zur Verschönerung ihres Klassenraums basteln die Kinder 12 Marienkäfer. Zum Schluss kleben sie die Punkte auf. Immer 2 Käfer sollen gleich viele Punkte haben. Es sind 9 Käfer fertig: (shows 9 ladybugs with various dot patterns). Wie viele Punkte werden für die letzten 3 Käfer insgesamt gebraucht?",
+      "questionTextEN": "To decorate their classroom, the children make 12 ladybugs. Finally, they glue on the dots. Every 2 ladybugs should have the same number of dots. 9 ladybugs are finished: (shows 9 ladybugs with various dot patterns). How many dots are needed in total for the last 3 ladybugs?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "8", "textEN": "8"},
+        {"id": "B", "textDE": "9", "textEN": "9"},
+        {"id": "C", "textDE": "10", "textEN": "10"},
+        {"id": "D", "textDE": "11", "textEN": "11"},
+        {"id": "E", "textDE": "12", "textEN": "12"}
+      ]
+    },
+    "C2": {
+      "questionTextDE": "",
+      "questionTextEN": "",
+      "hasTextOptions": false,
+      "note": "Image appears blank or missing"
+    },
+    "C3": {
+      "questionTextDE": "Die sieben Zahlen 1, 2, 3, 4, 5, 6, 7 sollen so in die sieben Kreise geschrieben werden, dass die drei Rechnungen richtig sind. Die 6 ist bereits eingetragen. Welche Zahl gehört in den Kreis mit dem Stern ★?",
+      "questionTextEN": "The seven numbers 1, 2, 3, 4, 5, 6, 7 should be written in the seven circles so that the three calculations are correct. The 6 is already entered. Which number belongs in the circle with the star ★?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "2", "textEN": "2"},
+        {"id": "B", "textDE": "3", "textEN": "3"},
+        {"id": "C", "textDE": "4", "textEN": "4"},
+        {"id": "D", "textDE": "5", "textEN": "5"},
+        {"id": "E", "textDE": "7", "textEN": "7"}
+      ]
+    },
+    "C4": {
+      "questionTextDE": "In fünf Gefäßen befinden sich lauter gleich große Murmeln und Wasser. In den ersten drei Gefäßen steht das Wasser gleich hoch, in den beiden anderen steht es doppelt so hoch. Welches Gefäß enthält am wenigsten Wasser?",
+      "questionTextEN": "In five containers there are equally large marbles and water. In the first three containers the water is at the same level, in the other two it is twice as high. Which container contains the least water?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "1", "textEN": "1"},
+        {"id": "B", "textDE": "2", "textEN": "2"},
+        {"id": "C", "textDE": "3", "textEN": "3"},
+        {"id": "D", "textDE": "4", "textEN": "4"},
+        {"id": "E", "textDE": "5", "textEN": "5"}
+      ]
+    },
+    "C5": {
+      "questionTextDE": "Mit schwarzen und grauen Würfeln wird die abgebildete Würfelpyramide gebaut. Würfel, die sich mit einer Seitenfläche berühren, sollen verschiedene Farben haben. Ganz oben soll ein schwarzer Würfel sein. Wie sieht die fertige Pyramide von oben aus?",
+      "questionTextEN": "The pictured cube pyramid is built with black and gray cubes. Cubes that touch with a face should have different colors. A black cube should be at the very top. How does the finished pyramid look from above?",
+      "hasTextOptions": false
+    },
+    "C6": {
+      "questionTextDE": "Larissa hat in einer Schatulle 50 Knöpfe. Es gibt weiße, rote und blaue. Weiße Knöpfe sind es 11-mal so viele wie blaue. Rote Knöpfe gibt es mehr als blaue, aber weniger als weiße. Wie viele rote Knöpfe sind es?",
+      "questionTextEN": "Larissa has 50 buttons in a box. There are white, red and blue ones. There are 11 times as many white buttons as blue ones. There are more red buttons than blue ones, but fewer than white ones. How many red buttons are there?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "2", "textEN": "2"},
+        {"id": "B", "textDE": "8", "textEN": "8"},
+        {"id": "C", "textDE": "14", "textEN": "14"},
+        {"id": "D", "textDE": "18", "textEN": "18"},
+        {"id": "E", "textDE": "26", "textEN": "26"}
+      ]
+    },
+    "C7": {
+      "questionTextDE": "Zehn gleiche Bausteine wurden aufeinandergestellt. Das Bild rechts zeigt die Ansicht von vorn. Wie lang ist die längste Kante eines solchen Bausteins?",
+      "questionTextEN": "Ten identical building blocks were stacked on top of each other. The picture on the right shows the view from the front. How long is the longest edge of such a building block?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "18 cm", "textEN": "18 cm"},
+        {"id": "B", "textDE": "19 cm", "textEN": "19 cm"},
+        {"id": "C", "textDE": "20 cm", "textEN": "20 cm"},
+        {"id": "D", "textDE": "21 cm", "textEN": "21 cm"},
+        {"id": "E", "textDE": "22 cm", "textEN": "22 cm"}
+      ]
+    },
+    "C8": {
+      "questionTextDE": "Am Eingang einer magischen Höhle sitzt ein Wächter. Vor ihm stehen zwei Balkenwaagen mit glänzenden Objekten darauf: Kugeln, Würfel und Sterne. „Willst du eintreten, musst du mir das Gewicht der Würfel nennen", tönt seine Stimme. „Jedes Objekt ist entweder 1 kg, 2 kg, 3 kg, 4 kg oder 5 kg schwer. Bedenke: Objekte gleicher Form sind gleich schwer." Wie viel wiegt ein Würfel?",
+      "questionTextEN": "A guard sits at the entrance to a magical cave. In front of him are two balance scales with shiny objects on them: balls, cubes and stars. \"If you want to enter, you must tell me the weight of the cubes,\" his voice sounds. \"Each object weighs either 1 kg, 2 kg, 3 kg, 4 kg or 5 kg. Remember: objects of the same shape weigh the same.\" How much does a cube weigh?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "1 kg", "textEN": "1 kg"},
+        {"id": "B", "textDE": "2 kg", "textEN": "2 kg"},
+        {"id": "C", "textDE": "3 kg", "textEN": "3 kg"},
+        {"id": "D", "textDE": "4 kg", "textEN": "4 kg"},
+        {"id": "E", "textDE": "5 kg", "textEN": "5 kg"}
+      ]
+    }
+  },
+  "2024": {
+    "A1": {
+      "questionTextDE": "Die Feuerwehrfrau hat es eilig. Sie muss das Feuer löschen und sucht den schnellsten Weg dorthin. Wie viele Leitern muss sie benutzen?",
+      "questionTextEN": "The firefighter is in a hurry. She needs to put out the fire and is looking for the fastest way there. How many ladders must she use?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "5", "textEN": "5"},
+        {"id": "B", "textDE": "6", "textEN": "6"},
+        {"id": "C", "textDE": "7", "textEN": "7"},
+        {"id": "D", "textDE": "8", "textEN": "8"},
+        {"id": "E", "textDE": "9", "textEN": "9"}
+      ]
+    },
+    "A2": {
+      "questionTextDE": "Welches Quadrat ist in zwei unterschiedliche Teile geteilt?",
+      "questionTextEN": "Which square is divided into two different parts?",
+      "hasTextOptions": false
+    },
+    "A3": {
+      "questionTextDE": "Auf dem Stück Kästchenpapier malt Erik die Spalte ganz links und 2 Zeilen rot aus. Wie viele Kästchen sind dann insgesamt rot?",
+      "questionTextEN": "On the piece of graph paper, Erik colors the leftmost column and 2 rows red. How many squares are then red in total?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "14", "textEN": "14"},
+        {"id": "B", "textDE": "16", "textEN": "16"},
+        {"id": "C", "textDE": "19", "textEN": "19"},
+        {"id": "D", "textDE": "20", "textEN": "20"},
+        {"id": "E", "textDE": "22", "textEN": "22"}
+      ]
+    },
+    "A4": {
+      "questionTextDE": "Juna zeichnet auf ein Blatt Papier ein Rechteck. Dann faltet sie es und sieht: Wie könnte das gefaltete Blatt von hinten aussehen?",
+      "questionTextEN": "Juna draws a rectangle on a sheet of paper. Then she folds it and sees: How could the folded sheet look from behind?",
+      "hasTextOptions": false
+    },
+    "A5": {
+      "questionTextDE": "Bei einem Spiel stehen 9 Kinder im Kreis. Sie werfen reihum einen Ball, immer zu dem Kind, das 2 Plätze weiter links steht. Das Kind an Punkt 1 beginnt. Jedes Kind wirft den Ball genau einmal. Ida wirft den Ball als Letzte. An welchem Punkt steht Ida?",
+      "questionTextEN": "In a game, 9 children stand in a circle. They throw a ball in turn, always to the child who is 2 places further to the left. The child at point 1 starts. Each child throws the ball exactly once. Ida throws the ball last. At which point does Ida stand?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "2", "textEN": "2"},
+        {"id": "B", "textDE": "4", "textEN": "4"},
+        {"id": "C", "textDE": "6", "textEN": "6"},
+        {"id": "D", "textDE": "7", "textEN": "7"},
+        {"id": "E", "textDE": "8", "textEN": "8"}
+      ]
+    },
+    "A6": {
+      "questionTextDE": "Vincent hat mehrere gleich große Würfel gestapelt. Nun will er noch einen Würfel darauflegen. Wie könnte sein Bauwerk dann aussehen?",
+      "questionTextEN": "Vincent has stacked several cubes of equal size. Now he wants to put another cube on top. How could his construction then look?",
+      "hasTextOptions": false
+    },
+    "A7": {
+      "questionTextDE": "An der Tafel waren 3 aufeinanderfolgende 3-stellige Zahlen der Reihe nach angeschrieben. Lotta hat aus Spaß 4 Ziffern weggewischt. Welche Ziffern hat Lotta von links nach rechts weggewischt?",
+      "questionTextEN": "Three consecutive 3-digit numbers were written on the board in order. Lotta erased 4 digits for fun. Which digits did Lotta erase from left to right?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "8 4 5 9", "textEN": "8 4 5 9"},
+        {"id": "B", "textDE": "9 4 4 9", "textEN": "9 4 4 9"},
+        {"id": "C", "textDE": "8 3 2 7", "textEN": "8 3 2 7"},
+        {"id": "D", "textDE": "7 4 4 8", "textEN": "7 4 4 8"},
+        {"id": "E", "textDE": "9 5 6 9", "textEN": "9 5 6 9"}
+      ]
+    },
+    "A8": {
+      "questionTextDE": "Vor dem Haus stehen 7 Mülltonnen. Sie sind gelb, schwarz oder blau, von jeder Farbe eine andere Anzahl. Gelbe Tonnen gibt es am meisten. Wie viele gelbe Tonnen sind es?",
+      "questionTextEN": "There are 7 garbage cans in front of the house. They are yellow, black or blue, a different number of each color. There are the most yellow cans. How many yellow cans are there?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "2", "textEN": "2"},
+        {"id": "B", "textDE": "3", "textEN": "3"},
+        {"id": "C", "textDE": "4", "textEN": "4"},
+        {"id": "D", "textDE": "5", "textEN": "5"},
+        {"id": "E", "textDE": "6", "textEN": "6"}
+      ]
+    },
+    "B1": {
+      "questionTextDE": "Der Koch in unserer Schulküche ist ein großer Känguru-Fan. Er hat in diesem Jahr sogar ein Känguru-Poster aufgehängt. Wie viele Fliesen sind hinter dem Poster?",
+      "questionTextEN": "The cook in our school kitchen is a big kangaroo fan. He even hung up a kangaroo poster this year. How many tiles are behind the poster?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "32", "textEN": "32"},
+        {"id": "B", "textDE": "35", "textEN": "35"},
+        {"id": "C", "textDE": "38", "textEN": "38"},
+        {"id": "D", "textDE": "44", "textEN": "44"},
+        {"id": "E", "textDE": "49", "textEN": "49"}
+      ]
+    },
+    "B2": {
+      "questionTextDE": "Bald sind Projekttage. Fünf Freunde haben schon angekreuzt, welche Projekte sie gut finden. Sie wurden alle für Projekte eingeteilt, die sie gut finden. Aber jeder wurde für ein anderes Projekt eingeteilt. Für welches Projekt wurde Lena eingeteilt?",
+      "questionTextEN": "Project days are coming soon. Five friends have already checked which projects they like. They were all assigned to projects they like. But each was assigned to a different project. Which project was Lena assigned to?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "1", "textEN": "1"},
+        {"id": "B", "textDE": "2", "textEN": "2"},
+        {"id": "C", "textDE": "3", "textEN": "3"},
+        {"id": "D", "textDE": "4", "textEN": "4"},
+        {"id": "E", "textDE": "5", "textEN": "5"}
+      ]
+    },
+    "B3": {
+      "questionTextDE": "Aus dem rechts abgebildeten Turm entfernt Jasmin die 2. Scheibe von unten. Aus dem so entstandenen Turm entfernt sie dann die 3. Scheibe von unten. Aus dem nun entstandenen Turm entfernt sie dann die 4. Scheibe von unten. Wie sieht der Turm jetzt aus?",
+      "questionTextEN": "From the tower shown on the right, Jasmin removes the 2nd disc from the bottom. From the tower thus created, she then removes the 3rd disc from the bottom. From the tower now created, she then removes the 4th disc from the bottom. How does the tower look now?",
+      "hasTextOptions": false
+    },
+    "B4": {
+      "questionTextDE": "Thilo schreibt auf ein Blatt Papier so wie im Bild die Zahlen 1, 2, 3, 4. Dann dreht er es um und schreibt auf die Rückseite so wie im Bild die Zahlen 5, 6, 7, 8. Nun schneidet er das Blatt in vier Teile: Für welche Zahlen stehen die Fragezeichen?",
+      "questionTextEN": "Thilo writes on a sheet of paper as in the picture the numbers 1, 2, 3, 4. Then he turns it over and writes on the back as in the picture the numbers 5, 6, 7, 8. Now he cuts the sheet into four parts: Which numbers do the question marks stand for?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "1 und 3", "textEN": "1 and 3"},
+        {"id": "B", "textDE": "3 und 4", "textEN": "3 and 4"},
+        {"id": "C", "textDE": "1 und 2", "textEN": "1 and 2"},
+        {"id": "D", "textDE": "2 und 3", "textEN": "2 and 3"},
+        {"id": "E", "textDE": "1 und 4", "textEN": "1 and 4"}
+      ]
+    },
+    "B5": {
+      "questionTextDE": "Ada teilt das abgebildete Quadrat in ein Quadrat mit Seitenlänge 6 cm und kleine Quadrate mit Seitenlänge 2 cm. Wie viele Quadrate erhält Ada?",
+      "questionTextEN": "Ada divides the pictured square into a square with side length 6 cm and small squares with side length 2 cm. How many squares does Ada get?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "9", "textEN": "9"},
+        {"id": "B", "textDE": "11", "textEN": "11"},
+        {"id": "C", "textDE": "13", "textEN": "13"},
+        {"id": "D", "textDE": "15", "textEN": "15"},
+        {"id": "E", "textDE": "17", "textEN": "17"}
+      ]
+    },
+    "B6": {
+      "questionTextDE": "Sieben Karten mit den Zahlen von 1 bis 7 werden wie im Bild in die Ringe gelegt. In jedem Ring ist die Summe aller Zahlen 10. Welche Zahl steht auf der Karte mit dem Fragezeichen?",
+      "questionTextEN": "Seven cards with the numbers from 1 to 7 are placed in the rings as shown in the picture. In each ring the sum of all numbers is 10. Which number is on the card with the question mark?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "1", "textEN": "1"},
+        {"id": "B", "textDE": "2", "textEN": "2"},
+        {"id": "C", "textDE": "4", "textEN": "4"},
+        {"id": "D", "textDE": "5", "textEN": "5"},
+        {"id": "E", "textDE": "7", "textEN": "7"}
+      ]
+    },
+    "B7": {
+      "questionTextDE": "Der Vorraum der Turnhalle wurde neu gefliest. Als Fliesen gibt es graue Rechtecke und schwarze Quadrate. Die grauen Rechtecke sind 23 cm lang und 11 cm breit. Welche Seitenlänge haben die schwarzen Quadrate?",
+      "questionTextEN": "The entrance hall of the gym has been newly tiled. The tiles are gray rectangles and black squares. The gray rectangles are 23 cm long and 11 cm wide. What side length do the black squares have?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "3 cm", "textEN": "3 cm"},
+        {"id": "B", "textDE": "4 cm", "textEN": "4 cm"},
+        {"id": "C", "textDE": "5 cm", "textEN": "5 cm"},
+        {"id": "D", "textDE": "6 cm", "textEN": "6 cm"},
+        {"id": "E", "textDE": "7 cm", "textEN": "7 cm"}
+      ]
+    },
+    "B8": {
+      "questionTextDE": "Milo schreibt die Zahlen von 1 bis 20 ohne besondere Ordnung in eine Reihe. Vor der Zahl 13 stehen genau 5 Zahlen, die größer als 13 sind. Hinter der Zahl 13 stehen genau 8 Zahlen, die kleiner als 13 sind. An welcher Stelle steht die Zahl 13?",
+      "questionTextEN": "Milo writes the numbers from 1 to 20 in a row in no particular order. Before the number 13 there are exactly 5 numbers that are greater than 13. After the number 13 there are exactly 8 numbers that are smaller than 13. At which position is the number 13?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "an der 6.", "textEN": "at the 6th"},
+        {"id": "B", "textDE": "an der 7.", "textEN": "at the 7th"},
+        {"id": "C", "textDE": "an der 8.", "textEN": "at the 8th"},
+        {"id": "D", "textDE": "an der 9.", "textEN": "at the 9th"},
+        {"id": "E", "textDE": "an der 10.", "textEN": "at the 10th"}
+      ]
+    },
+    "C1": {
+      "questionTextDE": "Ria spielt mit einem Raupenpuzzle. Zwischen Kopf und Endstück soll Rias Raupe 1 oder 2 oder 3 Teile haben. Wie viele verschiedene Raupen kann Ria puzzeln?",
+      "questionTextEN": "Ria plays with a caterpillar puzzle. Between head and tail piece, Ria's caterpillar should have 1 or 2 or 3 parts. How many different caterpillars can Ria puzzle?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "3", "textEN": "3"},
+        {"id": "B", "textDE": "4", "textEN": "4"},
+        {"id": "C", "textDE": "5", "textEN": "5"},
+        {"id": "D", "textDE": "6", "textEN": "6"},
+        {"id": "E", "textDE": "7", "textEN": "7"}
+      ]
+    },
+    "C2": {
+      "questionTextDE": "Drei neugierige Fliegen haben sich auf meine richtig gerechnete Hausaufgabe gesetzt. Welche Summe haben die drei verdeckten Ziffern?",
+      "questionTextEN": "Three curious flies have landed on my correctly calculated homework. What sum do the three covered digits have?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "8", "textEN": "8"},
+        {"id": "B", "textDE": "9", "textEN": "9"},
+        {"id": "C", "textDE": "10", "textEN": "10"},
+        {"id": "D", "textDE": "11", "textEN": "11"},
+        {"id": "E", "textDE": "12", "textEN": "12"}
+      ]
+    },
+    "C3": {
+      "questionTextDE": "Mit weißen Bausteinen und grauen Bausteinen soll der abgebildete Würfel gebaut werden. Die Anzahl an weißen Bausteinen soll so klein wie möglich sein. Wie viele weiße Bausteine werden benötigt?",
+      "questionTextEN": "The pictured cube is to be built with white blocks and gray blocks. The number of white blocks should be as small as possible. How many white blocks are needed?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "14", "textEN": "14"},
+        {"id": "B", "textDE": "15", "textEN": "15"},
+        {"id": "C", "textDE": "16", "textEN": "16"},
+        {"id": "D", "textDE": "17", "textEN": "17"},
+        {"id": "E", "textDE": "18", "textEN": "18"}
+      ]
+    },
+    "C4": {
+      "questionTextDE": "Auf einer Autofahre stehen 5 gleich große Autos. Die wenigen Autos stehen mit großen Abständen. Wie lang ist ein Auto?",
+      "questionTextEN": "On a car ferry there are 5 equally large cars. The few cars stand at large distances. How long is a car?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "3 m", "textEN": "3 m"},
+        {"id": "B", "textDE": "4 m", "textEN": "4 m"},
+        {"id": "C", "textDE": "5 m", "textEN": "5 m"},
+        {"id": "D", "textDE": "6 m", "textEN": "6 m"},
+        {"id": "E", "textDE": "7 m", "textEN": "7 m"}
+      ]
+    },
+    "C5": {
+      "questionTextDE": "Thao hat mit 3 Dosen verschiedene Türme gebaut. Er hat gemessen, wie hoch die ersten 3 Türme sind. Wie hoch ist der 4. Turm?",
+      "questionTextEN": "Thao built different towers with 3 cans. He measured how high the first 3 towers are. How high is the 4th tower?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "17 cm", "textEN": "17 cm"},
+        {"id": "B", "textDE": "18 cm", "textEN": "18 cm"},
+        {"id": "C", "textDE": "19 cm", "textEN": "19 cm"},
+        {"id": "D", "textDE": "20 cm", "textEN": "20 cm"},
+        {"id": "E", "textDE": "21 cm", "textEN": "21 cm"}
+      ]
+    },
+    "C6": {
+      "questionTextDE": "Filip ersetzt rechts in den Rechnungen gleiche Symbole durch gleiche Ziffern und verschiedene Symbole durch verschiedene Ziffern. Welches Ergebnis hat △·○·■?",
+      "questionTextEN": "Filip replaces on the right in the calculations equal symbols with equal digits and different symbols with different digits. What result does △·○·■ have?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "10", "textEN": "10"},
+        {"id": "B", "textDE": "15", "textEN": "15"},
+        {"id": "C", "textDE": "18", "textEN": "18"},
+        {"id": "D", "textDE": "28", "textEN": "28"},
+        {"id": "E", "textDE": "30", "textEN": "30"}
+      ]
+    },
+    "C7": {
+      "questionTextDE": "Einige Zellen der Bienenwabe enthalten Honig. Die Zahl in jeder Zelle gibt an, wie viele ihrer Nachbarzellen Honig enthalten. Wie viele Zellen in dieser Bienenwabe enthalten Honig?",
+      "questionTextEN": "Some cells of the honeycomb contain honey. The number in each cell indicates how many of its neighboring cells contain honey. How many cells in this honeycomb contain honey?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "4", "textEN": "4"},
+        {"id": "B", "textDE": "5", "textEN": "5"},
+        {"id": "C", "textDE": "6", "textEN": "6"},
+        {"id": "D", "textDE": "7", "textEN": "7"},
+        {"id": "E", "textDE": "8", "textEN": "8"}
+      ]
+    },
+    "C8": {
+      "questionTextDE": "Camila, Meret und Pius haben Kekse für das Schulfest gebacken. Einige Kekse wollen sie selbst essen. Diese legen sie in eine Reihe auf den Tisch: (shows cookie pattern). Die Kinder nehmen sich in irgendeiner Reihenfolge genau einmal Kekse vom Tisch. Ein Kind nimmt alle Herzen, die noch auf dem Tisch liegen. Ein Kind nimmt alle hellen Kekse, die noch auf dem Tisch liegen. Und ein Kind nimmt alle großen Kekse, die noch auf dem Tisch liegen. Am Ende hat eines der Kinder 3 Kekse, eines 6 Kekse und eines 8 Kekse. Welches Kind nimmt sich als Erstes Kekse vom Tisch?",
+      "questionTextEN": "Camila, Meret and Pius have baked cookies for the school festival. They want to eat some cookies themselves. They put them in a row on the table: (shows cookie pattern). The children take cookies from the table in any order exactly once. One child takes all the hearts that are still on the table. One child takes all the light cookies that are still on the table. And one child takes all the large cookies that are still on the table. In the end, one of the children has 3 cookies, one has 6 cookies and one has 8 cookies. Which child takes cookies from the table first?",
+      "hasTextOptions": false,
+      "note": "Question text appears incomplete in the image"
+    }
+  },
+  "2023": {
+    "A1": {
+      "questionTextDE": "Jonathan hat fünf gleiche Kerzen gleichzeitig angezündet. Dann hat er sie nach und nach wieder ausgepustet. Welche Kerze hat Jonathan zuerst ausgepustet?",
+      "questionTextEN": "Jonathan lit five identical candles at the same time. Then he blew them out one by one. Which candle did Jonathan blow out first?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "A", "textEN": "A"},
+        {"id": "B", "textDE": "B", "textEN": "B"},
+        {"id": "C", "textDE": "C", "textEN": "C"},
+        {"id": "D", "textDE": "D", "textEN": "D"},
+        {"id": "E", "textDE": "E", "textEN": "E"}
+      ]
+    },
+    "A2": {
+      "questionTextDE": "Vom Einkauf bringt Paula 66 Cent zurück und legt sie auf den Tisch. Die drei Münzen mit den Fragezeichen haben denselben Wert. Welchen?",
+      "questionTextEN": "Paula brings back 66 cents from shopping and puts them on the table. The three coins with question marks have the same value. Which one?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "1 Cent", "textEN": "1 Cent"},
+        {"id": "B", "textDE": "2 Cent", "textEN": "2 Cent"},
+        {"id": "C", "textDE": "5 Cent", "textEN": "5 Cent"},
+        {"id": "D", "textDE": "10 Cent", "textEN": "10 Cent"},
+        {"id": "E", "textDE": "20 Cent", "textEN": "20 Cent"}
+      ]
+    },
+    "A3": {
+      "questionTextDE": "Aus welchen beiden Teilen kann das Quadrat gelegt werden?",
+      "questionTextEN": "From which two parts can the square be assembled?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "1 und 2", "textEN": "1 and 2"},
+        {"id": "B", "textDE": "2 und 4", "textEN": "2 and 4"},
+        {"id": "C", "textDE": "1 und 3", "textEN": "1 and 3"},
+        {"id": "D", "textDE": "2 und 3", "textEN": "2 and 3"},
+        {"id": "E", "textDE": "1 und 4", "textEN": "1 and 4"}
+      ]
+    },
+    "A4": {
+      "questionTextDE": "Am Abend kehren alle 19 Ziegen auf den Bauernhof zurück. Es gibt zwei Ställe. Die 1. Ziege geht in den großen Stall, die 2. in den kleinen, die 3. in den großen, die 4. in den kleinen und so weiter. Wie viele Ziegen sind am Ende im großen Stall?",
+      "questionTextEN": "In the evening, all 19 goats return to the farm. There are two stables. The 1st goat goes into the large stable, the 2nd into the small one, the 3rd into the large one, the 4th into the small one and so on. How many goats are in the large stable at the end?",
+      "hasTextOptions": true,
+      "options": [
+        {"id": "A", "textDE": "7", "textEN": "7"},
+        {"id": "B", "textDE": "8", "textEN": "8"},
+        {"id": "C", "textDE": "10", "textEN": "10"},
+        {"id": "D", "textDE": "11", "textEN": "11"},
+        {"id": "E", "textDE": "13", "textEN": "13"}
+      ]
+    }
+  },
+  "_metadata": {
+    "extractionDate": "2026-03-16",
+    "yearsFullyProcessed": ["2025", "2024"],
+    "yearsPartiallyProcessed": ["2023"],
+    "yearsNotYetProcessed": ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    "totalYears": 26,
+    "questionsPerYear": 24,
+    "note": "This file contains complete extractions for 2025 and 2024, partial extraction for 2023. Due to the scale of this task (624 total images), the remaining years (2000-2022) need to be processed incrementally. The JSON structure provided can serve as a template for adding additional years."
+  }
+}

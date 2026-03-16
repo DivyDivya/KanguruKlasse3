@@ -284,16 +284,21 @@ class KanguruQuiz {
 
         question.options.forEach(option => {
             const textKey = this.currentLanguage === 'de' ? 'textDE' : 'textEN';
-            const btn = document.createElement('button');
-            btn.className = 'option-btn';
-            btn.dataset.option = option.id;
-            btn.innerHTML = `
-                <span class="option-label">${option.id}</span>
-                <span class="option-text">${option[textKey]}</span>
+
+            const label = document.createElement('label');
+            label.className = 'option-label-wrapper';
+            label.dataset.option = option.id;
+
+            label.innerHTML = `
+                <input type="radio" name="answer" value="${option.id}" class="option-radio">
+                <span class="option-btn">
+                    <span class="option-letter">${option.id}</span>
+                    <span class="option-text">${option[textKey]}</span>
+                </span>
             `;
 
-            btn.addEventListener('click', () => this.selectOption(option.id));
-            container.appendChild(btn);
+            label.addEventListener('click', () => this.selectOption(option.id));
+            container.appendChild(label);
         });
     }
 
@@ -302,9 +307,13 @@ class KanguruQuiz {
         const isCorrect = selectedOption === question.correctAnswer;
 
         // Disable all options
-        document.querySelectorAll('.option-btn').forEach(btn => {
+        document.querySelectorAll('.option-label-wrapper').forEach(wrapper => {
+            const radio = wrapper.querySelector('.option-radio');
+            const btn = wrapper.querySelector('.option-btn');
+            radio.disabled = true;
             btn.classList.add('disabled');
-            const optionId = btn.dataset.option;
+
+            const optionId = wrapper.dataset.option;
 
             if (optionId === question.correctAnswer) {
                 btn.classList.add('correct');

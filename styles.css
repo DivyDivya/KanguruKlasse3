@@ -432,12 +432,22 @@ body {
     margin-bottom: 20px;
 }
 
+.option-label-wrapper {
+    cursor: pointer;
+    display: block;
+}
+
+.option-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .option-btn {
     background: white;
     border: 3px solid var(--secondary-color);
     border-radius: 15px;
     padding: 15px 20px;
-    cursor: pointer;
     transition: all 0.3s ease;
     font-size: 1.05em;
     font-weight: bold;
@@ -449,13 +459,18 @@ body {
     text-align: left;
 }
 
-.option-btn:hover:not(.disabled) {
+.option-label-wrapper:hover .option-btn:not(.disabled) {
     transform: translateX(5px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     border-color: var(--blue);
 }
 
-.option-label {
+.option-radio:checked + .option-btn {
+    border-color: var(--blue);
+    border-width: 4px;
+}
+
+.option-letter {
     background: var(--secondary-color);
     color: white;
     font-size: 1.1em;
@@ -481,7 +496,7 @@ body {
     border-width: 4px;
 }
 
-.option-btn.correct .option-label {
+.option-btn.correct .option-letter {
     background: var(--success-color);
 }
 
@@ -491,7 +506,7 @@ body {
     border-width: 4px;
 }
 
-.option-btn.wrong .option-label {
+.option-btn.wrong .option-letter {
     background: var(--error-color);
 }
 
