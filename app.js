@@ -371,6 +371,15 @@ class KanguruQuiz {
         // Show feedback
         this.showFeedback(isCorrect, question);
         this.updateProgress();
+
+        // Focus on next button after showing feedback
+        setTimeout(() => {
+            const nextBtn = document.getElementById('nextBtn');
+            if (nextBtn) {
+                nextBtn.focus();
+                nextBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }, 100);
     }
 
     showFeedback(isCorrect, question) {
