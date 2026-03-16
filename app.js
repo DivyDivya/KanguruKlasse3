@@ -220,21 +220,18 @@ class KanguruQuiz {
         document.getElementById('questionId').textContent = question.id;
         document.getElementById('questionPoints').textContent = question.points;
 
-        // Update question text - only show if there's actual content (not placeholder)
+        // Update question text - only show when English is selected
         const textKey = this.currentLanguage === 'de' ? 'questionTextDE' : 'questionTextEN';
         const questionTextElement = document.getElementById('questionText');
         const questionText = question[textKey];
 
-        // Check if it's a placeholder text or real content
-        const isPlaceholder = questionText.startsWith('Aufgabe ') || questionText.startsWith('Question ');
-
-        if (isPlaceholder) {
-            // Hide question text if it's just a placeholder
-            questionTextElement.style.display = 'none';
-        } else {
-            // Show question text if we have real translated content
+        if (this.currentLanguage === 'en') {
+            // Show question text only when English is selected
             questionTextElement.style.display = 'block';
             questionTextElement.textContent = questionText;
+        } else {
+            // Hide question text when German is selected (default)
+            questionTextElement.style.display = 'none';
         }
 
         // Handle image
