@@ -10,6 +10,7 @@ class KanguruQuiz {
         this.answers = [];
         this.wrongQuestions = this.loadWrongQuestions();
         this.isPracticeMode = false;
+        this.yearScores = this.loadYearScores(); // Track scores per year
 
         this.init();
     }
@@ -43,7 +44,7 @@ class KanguruQuiz {
 
         // Back button
         document.getElementById('backBtn').addEventListener('click', () => {
-            this.showScreen('homeScreen');
+            this.returnToHome();
         });
 
         // Expand image button
@@ -68,6 +69,13 @@ class KanguruQuiz {
             }
         });
 
+        // ESC key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.hideImageModal();
+            }
+        });
+
         // Next button
         document.getElementById('nextBtn').addEventListener('click', () => {
             this.nextQuestion();
@@ -75,7 +83,7 @@ class KanguruQuiz {
 
         // Results buttons
         document.getElementById('homeBtn').addEventListener('click', () => {
-            this.showScreen('homeScreen');
+            this.returnToHome();
         });
 
         document.getElementById('retryBtn').addEventListener('click', () => {
@@ -95,12 +103,20 @@ class KanguruQuiz {
             const hasQuestions = questionsData[year].questions.length > 0;
             if (!hasQuestions) return; // Skip years without questions
 
+            const yearScore = this.yearScores[year];
             const card = document.createElement('button');
             card.className = 'year-card';
             card.dataset.year = year;
+
+            let scoreDisplay = '';
+            if (yearScore) {
+                scoreDisplay = `<span class="year-score">⭐ ${yearScore.score} ${this.currentLanguage === 'de' ? 'Punkte' : 'Points'}</span>`;
+            }
+
             card.innerHTML = `
                 <span class="year-number">${year}</span>
                 <span class="year-label">Klasse 3/4</span>
+                ${scoreDisplay}
             `;
             container.appendChild(card);
         });
@@ -128,6 +144,11 @@ class KanguruQuiz {
         if (this.questions.length > 0 && this.currentQuestionIndex < this.questions.length) {
             this.renderQuestion();
         }
+
+        // Re-render year selection to update score labels
+        if (document.getElementById('homeScreen').classList.contains('active')) {
+            this.renderYearSelection();
+        }
     }
 
     startQuiz(year) {
@@ -146,6 +167,9 @@ class KanguruQuiz {
         this.showScreen('quizScreen');
         this.updateQuizHeader();
         this.renderQuestion();
+
+        // Scroll to top of quiz screen
+        window.scrollTo(0, 0);
     }
 
     startPracticeMode() {
@@ -161,6 +185,9 @@ class KanguruQuiz {
         this.showScreen('quizScreen');
         this.updateQuizHeader();
         this.renderQuestion();
+
+        // Scroll to top of quiz screen
+        window.scrollTo(0, 0);
     }
 
     updateQuizHeader() {
@@ -221,6 +248,9 @@ class KanguruQuiz {
         // Hide feedback
         document.getElementById('feedback').classList.add('hidden');
         document.getElementById('feedback').classList.remove('correct', 'wrong');
+
+        // Scroll to top of question
+        window.scrollTo(0, 0);
     }
 
     getPageNumber(questionId) {
@@ -348,7 +378,15 @@ class KanguruQuiz {
         document.getElementById('wrongCount').textContent = wrongCount;
         document.getElementById('skippedCount').textContent = skippedCount;
 
+        // Save score for this year
+        if (!this.isPracticeMode) {
+            this.saveYearScore(this.currentYear, this.score, correctCount, wrongCount);
+        }
+
         this.showScreen('resultsScreen');
+
+        // Scroll to top of results
+        window.scrollTo(0, 0);
     }
 
     showScreen(screenId) {
@@ -356,6 +394,14 @@ class KanguruQuiz {
             screen.classList.remove('active');
         });
         document.getElementById(screenId).classList.add('active');
+
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
+
+    returnToHome() {
+        this.renderYearSelection(); // Refresh to show updated scores
+        this.showScreen('homeScreen');
     }
 
     showImageModal() {
@@ -376,6 +422,22 @@ class KanguruQuiz {
         // Show the full page in the modal
         document.getElementById('modalImage').src = pageImage;
         document.getElementById('imageModal').classList.remove('hidden');
+    }
+
+    // Year Score Management
+    loadYearScores() {
+        const stored = localStorage.getItem('kanguruYearScores');
+        return stored ? JSON.parse(stored) : {};
+    }
+
+    saveYearScore(year, score, correct, wrong) {
+        this.yearScores[year] = {
+            score: score,
+            correct: correct,
+            wrong: wrong,
+            date: new Date().toISOString()
+        };
+        localStorage.setItem('kanguruYearScores', JSON.stringify(this.yearScores));
     }
 
     // Wrong Questions Management
