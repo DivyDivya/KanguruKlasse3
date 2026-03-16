@@ -254,9 +254,6 @@ class KanguruQuiz {
         // Hide feedback
         document.getElementById('feedback').classList.add('hidden');
         document.getElementById('feedback').classList.remove('correct', 'wrong');
-
-        // Scroll to top of question
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     getPageNumber(questionId) {
@@ -349,6 +346,9 @@ class KanguruQuiz {
         const feedback = document.getElementById('feedback');
         const reasoningKey = this.currentLanguage === 'de' ? 'reasoningDE' : 'reasoningEN';
 
+        // Save current scroll position
+        const scrollY = window.scrollY;
+
         feedback.classList.remove('hidden', 'correct', 'wrong');
         feedback.classList.add(isCorrect ? 'correct' : 'wrong');
 
@@ -361,6 +361,9 @@ class KanguruQuiz {
         feedback.querySelector('.feedback-title').textContent = title;
         feedback.querySelector('.feedback-reasoning').textContent = question[reasoningKey] ||
             (this.currentLanguage === 'de' ? 'Keine Erklärung verfügbar.' : 'No explanation available.');
+
+        // Restore scroll position to prevent auto-scroll
+        window.scrollTo(0, scrollY);
     }
 
     nextQuestion() {
