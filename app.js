@@ -88,8 +88,12 @@ class KanguruQuiz {
         });
 
         document.getElementById('retryBtn').addEventListener('click', () => {
-            console.log('Retry button clicked, current year:', this.currentYear);
-            this.startQuiz(this.currentYear);
+            console.log('Retry button clicked, isPracticeMode:', this.isPracticeMode, 'currentYear:', this.currentYear);
+            if (this.isPracticeMode) {
+                this.startPracticeMode();
+            } else {
+                this.startQuiz(this.currentYear);
+            }
         });
     }
 
@@ -154,6 +158,12 @@ class KanguruQuiz {
     }
 
     startQuiz(year) {
+        // If retrying practice mode, restart practice mode instead
+        if (this.isPracticeMode || year === 'Practice') {
+            this.startPracticeMode();
+            return;
+        }
+
         this.currentYear = year;
         this.questions = [...questionsData[year].questions];
         this.currentQuestionIndex = 0;
