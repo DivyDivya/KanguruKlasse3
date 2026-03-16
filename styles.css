@@ -395,11 +395,10 @@ body {
 }
 
 .image-controls {
-    position: absolute;
-    top: 12px;
-    right: 12px;
     display: flex;
     gap: 8px;
+    margin-top: 8px;
+    justify-content: center;
 }
 
 .expand-btn {
@@ -742,10 +741,12 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     z-index: 2000;
     padding: 20px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal.hidden {
@@ -755,7 +756,11 @@ body {
 .modal-content {
     position: relative;
     max-width: 95%;
-    max-height: 95%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .modal-image {
@@ -763,12 +768,14 @@ body {
     height: auto;
     border-radius: 15px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    max-width: 100%;
 }
 
 .close-modal {
-    position: absolute;
-    top: -50px;
-    right: 0;
+    position: sticky;
+    top: 10px;
+    align-self: flex-end;
+    margin-bottom: 10px;
     background: white;
     color: var(--text-dark);
     border: none;
@@ -779,6 +786,7 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
+    z-index: 2001;
 }
 
 .close-modal:hover {
