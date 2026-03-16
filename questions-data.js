@@ -14,8 +14,7 @@ const questionsData = {
                 questionTextDE: 'Selina lässt ihr Windrad drehen. Auf welchem der folgenden Bilder ist Selinas Windrad zu sehen?',
                 questionTextEN: 'Selina spins her pinwheel. Which of the following pictures shows Selina\'s pinwheel?',
                 hasImage: true,
-                imageType: 'full', // full question as image
-                imagePath: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y4ZjlmYSIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkZyYWdlIEExOiBXaW5kcmFkIEJpbGQ8L3RleHQ+PC9zdmc+',
+                imagePath: 'images/2025/A1.png',
                 options: [
                     { id: 'A', textDE: 'Option A', textEN: 'Option A' },
                     { id: 'B', textDE: 'Option B', textEN: 'Option B' },
@@ -36,7 +35,7 @@ const questionsData = {
                 questionTextEN: 'Isabell lost a glove on the ice rink. What do the tracks look like under the glove?',
                 hasImage: true,
                 imageType: 'full',
-                imagePath: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y4ZjlmYSIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkZyYWdlIEEyOiBIYW5kc2NodWggU3B1cmVuPC90ZXh0Pjwvc3ZnPg==',
+                imagePath: 'images/2025/page_1.png',
                 options: [
                     { id: 'A', textDE: 'Option A', textEN: 'Option A' },
                     { id: 'B', textDE: 'Option B', textEN: 'Option B' },
@@ -95,7 +94,7 @@ const questionsData = {
                 questionTextEN: 'In their shop, Samuel and Alina pay with snail shells and stones. A snail shell has a value of 6 and a stone has a value of 1. Samuel\'s full shopping basket has a value of 16. How could Samuel pay the exact amount?',
                 hasImage: true,
                 imageType: 'full',
-                imagePath: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y4ZjlmYSIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkZyYWdlIEIyOiBTY2huZWNrZW5oYXVzIHVuZCBTdGVpbmNoZW48L3RleHQ+PC9zdmc+',
+                imagePath: 'images/2025/page_1.png',
                 options: [
                     { id: 'A', textDE: 'Option A', textEN: 'Option A' },
                     { id: 'B', textDE: 'Option B', textEN: 'Option B' },
@@ -135,7 +134,7 @@ const questionsData = {
                 questionTextEN: 'The seven numbers 1, 2, 3, 4, 5, 6, 7 should be written in the seven circles so that the three calculations are correct. The 6 is already entered. Which number belongs in the circle with the star ⭐?',
                 hasImage: true,
                 imageType: 'full',
-                imagePath: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y4ZjlmYSIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkZyYWdlIEMzOiBLcmVpc2UgbWl0IFJlY2hudW5nZW48L3RleHQ+PC9zdmc+',
+                imagePath: 'images/2025/page_1.png',
                 options: [
                     { id: 'A', textDE: '2', textEN: '2' },
                     { id: 'B', textDE: '3', textEN: '3' },

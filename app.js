@@ -192,7 +192,20 @@ class KanguruQuiz {
 
         if (question.hasImage) {
             imageWrapper.style.display = 'block';
-            questionImage.src = question.imagePath || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI2Y4ZjlmYSIvPjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPltCaWxkIG5pY2h0IHZlcmbDvGdiYXIgLyBJbWFnZSBub3QgYXZhaWxhYmxlXTwvdGV4dD48L3N2Zz4=';
+
+            // Try to load the individual question image first
+            const individualImage = `images/${question.year || this.currentYear}/${question.id}.png`;
+
+            // Check if image exists by attempting to load it
+            questionImage.onerror = () => {
+                // Fallback to full page image if individual question image fails
+                const pageNum = this.getPageNumber(question.id);
+                const fallbackImage = `images/${question.year || this.currentYear}/page_${pageNum}.png`;
+                questionImage.src = fallbackImage;
+                console.log(`Fallback: Using page ${pageNum} for ${question.id}`);
+            };
+
+            questionImage.src = individualImage;
         } else {
             imageWrapper.style.display = 'none';
         }
@@ -203,6 +216,28 @@ class KanguruQuiz {
         // Hide feedback
         document.getElementById('feedback').classList.add('hidden');
         document.getElementById('feedback').classList.remove('correct', 'wrong');
+    }
+
+    getPageNumber(questionId) {
+        /**
+         * Estimate which PDF page a question is on
+         * Page 1: A1-A5 (typically)
+         * Page 2: A6-A8, B1-B4
+         * Page 3: B5-B8, C1-C2
+         * Page 4: C3-C8
+         */
+        const section = questionId[0];
+        const num = parseInt(questionId.substring(1));
+
+        if (section === 'A') {
+            return num <= 5 ? 1 : 2;
+        } else if (section === 'B') {
+            return num <= 4 ? 2 : 3;
+        } else if (section === 'C') {
+            return num <= 2 ? 3 : 4;
+        }
+
+        return 1; // Default fallback
     }
 
     renderOptions(question) {
